@@ -27,11 +27,11 @@ const coaches = [
       'My sessions leave people exhausted, proud, and already thinking about the next one.',
   },
   {
-    name: 'Andre',
-    specialty: 'Strength & athletic comeback',
-    image: '/coaches/andre.png',
+    name: 'Marcus',
+    specialty: 'Strength & everyday athletes',
+    image: '/coaches/marcus.png',
     quote:
-      'I bring raw energy and relentless drive — demanding, real, and impossible to quit on.',
+      'I know exactly when to push harder and when to back off. That\'s the difference between results and burnout.',
   },
   {
     name: 'Chloe',
