@@ -332,7 +332,7 @@ body {
 .coaches-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 680px) {
@@ -345,10 +345,9 @@ body {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 20px;
-  padding: 2rem 1.75rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -357,25 +356,31 @@ body {
   transform: translateY(-3px);
 }
 
-.coach-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--coach-color) 18%, transparent);
-  border: 2px solid color-mix(in srgb, var(--coach-color) 40%, transparent);
-  color: var(--coach-color);
-  font-family: var(--font-fraunces, serif);
-  font-style: italic;
-  font-weight: 800;
-  font-size: 1.125rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: -0.01em;
+.coach-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
-.coach-info {
+.coach-photo {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.coach-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    rgba(10, 14, 26, 0.55) 100%
+  );
+}
+
+.coach-caption {
+  padding: 1.5rem 1.75rem 1.75rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -384,18 +389,19 @@ body {
 .coach-name {
   font-family: var(--font-fraunces, serif);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: var(--text);
   line-height: 1.2;
 }
 
 .coach-specialty {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
 }
 
 .coach-quote {
@@ -403,7 +409,7 @@ body {
   color: var(--text-dim);
   line-height: 1.65;
   font-style: italic;
-  border-left: 2px solid var(--card-border);
+  border-left: 2px solid rgba(125, 249, 255, 0.25);
   padding-left: 1rem;
   margin: 0;
 }

@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import Image from 'next/image'
 import WaitlistForm from './components/WaitlistForm'
 
 async function getWaitlistCount(): Promise<number> {
@@ -19,28 +20,25 @@ export const revalidate = 60
 
 const coaches = [
   {
-    initials: 'SM',
-    name: 'Sarah M.',
-    specialty: 'Post-pregnancy comeback',
-    color: '#7df9ff',
+    name: 'Zoe',
+    specialty: 'HIIT & functional training',
+    image: '/coaches/zoe.png',
     quote:
-      'Your body just did something remarkable. We build from that — not from erasing it.',
+      'My sessions leave people exhausted, proud, and already thinking about the next one.',
   },
   {
-    initials: 'MT',
-    name: 'Marcus T.',
-    specialty: 'Injury rehab & return to sport',
-    color: '#d8ff3e',
+    name: 'Chloe',
+    specialty: 'Group fitness & real relationships',
+    image: '/coaches/chloe.png',
     quote:
-      'A bad knee doesn\'t mean a bad program. We work around it, and through it.',
+      'Most fitness struggles aren\'t about willpower — they\'re about finding the right approach for the right person.',
   },
   {
-    initials: 'PK',
-    name: 'Priya K.',
-    specialty: 'First-timers & gym anxiety',
-    color: '#7df9ff',
+    name: 'Carmen',
+    specialty: 'Biomechanics & performance',
+    image: '/coaches/carmen.png',
     quote:
-      'You don\'t need to figure it out alone. I\'ll be there before you even walk in the door.',
+      'I explain the why behind everything. My clients leave every session smarter than they arrived.',
   },
 ]
 
@@ -143,20 +141,24 @@ export default async function Home() {
           <div className="coaches-grid">
             {coaches.map((coach) => (
               <div key={coach.name} className="coach-card">
-                <div
-                  className="coach-avatar"
-                  style={{ '--coach-color': coach.color } as React.CSSProperties}
-                  aria-hidden
-                >
-                  {coach.initials}
+                <div className="coach-photo-wrap">
+                  <Image
+                    src={coach.image}
+                    alt={`${coach.name}, VividCoach`}
+                    fill
+                    sizes="(max-width: 680px) 100vw, 33vw"
+                    className="coach-photo"
+                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  />
+                  <div className="coach-photo-overlay" aria-hidden />
                 </div>
-                <div className="coach-info">
+                <div className="coach-caption">
                   <div className="coach-name">{coach.name}</div>
                   <div className="coach-specialty">{coach.specialty}</div>
+                  <blockquote className="coach-quote">
+                    &ldquo;{coach.quote}&rdquo;
+                  </blockquote>
                 </div>
-                <blockquote className="coach-quote">
-                  &ldquo;{coach.quote}&rdquo;
-                </blockquote>
               </div>
             ))}
           </div>
