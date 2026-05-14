@@ -17,6 +17,33 @@ async function getWaitlistCount(): Promise<number> {
 
 export const revalidate = 60
 
+const coaches = [
+  {
+    initials: 'SM',
+    name: 'Sarah M.',
+    specialty: 'Post-pregnancy comeback',
+    color: '#7df9ff',
+    quote:
+      'Your body just did something remarkable. We build from that — not from erasing it.',
+  },
+  {
+    initials: 'MT',
+    name: 'Marcus T.',
+    specialty: 'Injury rehab & return to sport',
+    color: '#d8ff3e',
+    quote:
+      'A bad knee doesn\'t mean a bad program. We work around it, and through it.',
+  },
+  {
+    initials: 'PK',
+    name: 'Priya K.',
+    specialty: 'First-timers & gym anxiety',
+    color: '#7df9ff',
+    quote:
+      'You don\'t need to figure it out alone. I\'ll be there before you even walk in the door.',
+  },
+]
+
 export default async function Home() {
   const count = await getWaitlistCount()
 
@@ -71,7 +98,7 @@ export default async function Home() {
               <div className="story-card-accent" aria-hidden />
               <div className="story-card-problem">Bad knee.</div>
               <p className="story-card-body">
-                Not "just avoid squats." VividCoach knows your knee, builds around
+                Not &quot;just avoid squats.&quot; VividCoach knows your knee, builds around
                 it, and adapts every session so you can still move forward.
               </p>
             </div>
@@ -95,6 +122,43 @@ export default async function Home() {
                 figuring it out.
               </p>
             </div>
+          </div>
+        </section>
+
+        <div className="divider" />
+
+        {/* ── COACHES ───────────────────────────────────── */}
+        <section className="coaches" id="coaches">
+          <div className="coaches-header">
+            <p className="section-label">Meet your coaches</p>
+            <h2 className="coaches-title">
+              Real coaches. Real <em>connection.</em>
+            </h2>
+            <p className="coaches-sub">
+              Every VividCoach coach is matched to your specific situation — not
+              assigned randomly. The bond starts before your first session.
+            </p>
+          </div>
+
+          <div className="coaches-grid">
+            {coaches.map((coach) => (
+              <div key={coach.name} className="coach-card">
+                <div
+                  className="coach-avatar"
+                  style={{ '--coach-color': coach.color } as React.CSSProperties}
+                  aria-hidden
+                >
+                  {coach.initials}
+                </div>
+                <div className="coach-info">
+                  <div className="coach-name">{coach.name}</div>
+                  <div className="coach-specialty">{coach.specialty}</div>
+                </div>
+                <blockquote className="coach-quote">
+                  &ldquo;{coach.quote}&rdquo;
+                </blockquote>
+              </div>
+            ))}
           </div>
         </section>
 

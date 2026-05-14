@@ -295,6 +295,119 @@ body {
   line-height: 1.65;
 }
 
+/* ─── COACHES ──────────────────────────────────────────── */
+.coaches {
+  padding: 5rem 1.5rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.coaches-header {
+  margin-bottom: 3.5rem;
+}
+
+.coaches-title {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  max-width: 24ch;
+  margin-bottom: 1rem;
+}
+
+.coaches-title em {
+  color: var(--cyan);
+}
+
+.coaches-sub {
+  font-size: 0.9375rem;
+  color: var(--text-dim);
+  max-width: 52ch;
+  line-height: 1.65;
+}
+
+.coaches-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 680px) {
+  .coaches-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.coach-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.coach-card:hover {
+  border-color: rgba(125, 249, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.coach-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--coach-color) 18%, transparent);
+  border: 2px solid color-mix(in srgb, var(--coach-color) 40%, transparent);
+  color: var(--coach-color);
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-weight: 800;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.coach-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.coach-name {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.coach-specialty {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.coach-quote {
+  font-size: 0.9375rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  font-style: italic;
+  border-left: 2px solid var(--card-border);
+  padding-left: 1rem;
+  margin: 0;
+}
+
 /* ─── WAITLIST ─────────────────────────────────────────── */
 .waitlist {
   padding: 5rem 1.5rem;
