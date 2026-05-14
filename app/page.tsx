@@ -17,6 +17,7 @@ async function getWaitlistCount(): Promise<number> {
 
 export const revalidate = 60
 
+// Zoe | Andre | Chloe — ordered for visual balance (2 women bookend 1 man)
 const coaches = [
   {
     name: 'Zoe',
@@ -26,18 +27,18 @@ const coaches = [
       'My sessions leave people exhausted, proud, and already thinking about the next one.',
   },
   {
+    name: 'Andre',
+    specialty: 'Strength & athletic comeback',
+    image: '/coaches/andre.png',
+    quote:
+      'I bring raw energy and relentless drive — demanding, real, and impossible to quit on.',
+  },
+  {
     name: 'Chloe',
     specialty: 'Group fitness & real relationships',
     image: '/coaches/chloe.png',
     quote:
       'Most fitness struggles aren\'t about willpower — they\'re about finding the right approach for the right person.',
-  },
-  {
-    name: 'Carmen',
-    specialty: 'Biomechanics & performance',
-    image: '/coaches/carmen.png',
-    quote:
-      'I explain the why behind everything. My clients leave every session smarter than they arrived.',
   },
 ]
 
@@ -80,6 +81,45 @@ export default async function Home() {
             <div className="hero-scroll-arrow" />
           </div>
         </section>
+
+        {/* ── COACHES ───────────────────────────────────── */}
+        <section className="coaches" id="coaches">
+          <div className="coaches-header">
+            <p className="section-label">Meet your coaches</p>
+            <h2 className="coaches-title">
+              Real coaches. Real <em>connection.</em>
+            </h2>
+            <p className="coaches-sub">
+              Every VividCoach coach is matched to your specific situation — not
+              assigned randomly. The bond starts before your first session.
+            </p>
+          </div>
+
+          <div className="coaches-grid">
+            {coaches.map((coach) => (
+              <div key={coach.name} className="coach-card">
+                <div className="coach-photo-wrap">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={coach.image}
+                    alt={`${coach.name}, VividCoach`}
+                    className="coach-photo"
+                  />
+                  <div className="coach-photo-overlay" aria-hidden />
+                </div>
+                <div className="coach-caption">
+                  <div className="coach-name">{coach.name}</div>
+                  <div className="coach-specialty">{coach.specialty}</div>
+                  <blockquote className="coach-quote">
+                    &ldquo;{coach.quote}&rdquo;
+                  </blockquote>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="divider" />
 
         {/* ── BRAND STORY ───────────────────────────────── */}
         <section className="story" id="story">
@@ -124,50 +164,11 @@ export default async function Home() {
 
         <div className="divider" />
 
-        {/* ── COACHES ───────────────────────────────────── */}
-        <section className="coaches" id="coaches">
-          <div className="coaches-header">
-            <p className="section-label">Meet your coaches</p>
-            <h2 className="coaches-title">
-              Real coaches. Real <em>connection.</em>
-            </h2>
-            <p className="coaches-sub">
-              Every VividCoach coach is matched to your specific situation — not
-              assigned randomly. The bond starts before your first session.
-            </p>
-          </div>
-
-          <div className="coaches-grid">
-            {coaches.map((coach) => (
-              <div key={coach.name} className="coach-card">
-                <div className="coach-photo-wrap">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={coach.image}
-                    alt={`${coach.name}, VividCoach`}
-                    className="coach-photo"
-                  />
-                  <div className="coach-photo-overlay" aria-hidden />
-                </div>
-                <div className="coach-caption">
-                  <div className="coach-name">{coach.name}</div>
-                  <div className="coach-specialty">{coach.specialty}</div>
-                  <blockquote className="coach-quote">
-                    &ldquo;{coach.quote}&rdquo;
-                  </blockquote>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="divider" />
-
         {/* ── WAITLIST ──────────────────────────────────── */}
         <section className="waitlist" id="waitlist">
           <p className="section-label">Beta waitlist</p>
           <h2 className="waitlist-title">
-            Be the first to coach with VividCoach.
+            Get early access to VividCoach.
           </h2>
           <p className="waitlist-sub">
             We&apos;re opening beta to a small group. Drop your email and
@@ -190,6 +191,16 @@ export default async function Home() {
           <a href="mailto:support@vivid-coach.com" className="support-link">
             support@vivid-coach.com
           </a>
+
+          <div className="feedback-block">
+            <p className="section-label" style={{ marginTop: '2.5rem' }}>Share ideas</p>
+            <p className="support-body">
+              Have a feature idea or feedback for the beta? We&apos;d love to hear it.
+            </p>
+            <a href="mailto:feedback@vivid-coach.com" className="support-link">
+              feedback@vivid-coach.com
+            </a>
+          </div>
         </section>
       </main>
 
