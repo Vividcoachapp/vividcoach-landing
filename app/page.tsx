@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import Image from 'next/image'
 import WaitlistForm from './components/WaitlistForm'
 
 async function getWaitlistCount(): Promise<number> {
@@ -142,13 +141,11 @@ export default async function Home() {
             {coaches.map((coach) => (
               <div key={coach.name} className="coach-card">
                 <div className="coach-photo-wrap">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={coach.image}
                     alt={`${coach.name}, VividCoach`}
-                    fill
-                    sizes="(max-width: 680px) 100vw, 33vw"
                     className="coach-photo"
-                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
                   />
                   <div className="coach-photo-overlay" aria-hidden />
                 </div>
