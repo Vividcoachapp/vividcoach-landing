@@ -49,5 +49,22 @@ export async function POST(req: NextRequest) {
 
   const { data: countData } = await supabase.rpc('get_waitlist_count')
 
+  // Fire-and-forget CEO notification — requires RESEND_API_KEY in Vercel env vars
+  if (process.env.RESEND_API_KEY) {
+    fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'VividCoach Waitlist <waitlist@vivid-coach.com>',
+        to: 'vividcoachceo@proton.me',
+        subject: `New beta signup: ${email}`,
+        text: `${email} just joined the VividCoach beta waitlist.\n\nTotal on waitlist: ${countData ?? 1}`,
+      }),
+    }).catch((err) => console.error('CEO notification email failed:', err))
+  }
+
   return NextResponse.json({ success: true, count: countData ?? 1 }, { status: 201 })
 }
