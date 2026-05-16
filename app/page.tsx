@@ -209,6 +209,7 @@ export default async function Home() {
         <p className="footer-copy">© 2026 VividCoach. All rights reserved.</p>
         <nav className="footer-links">
           <a href="/privacy" className="footer-link">Privacy Policy</a>
+          <a href="/contest-rules" className="footer-link">Contest Rules</a>
           <a href="#support" className="footer-link">Support</a>
         </nav>
       </footer>
