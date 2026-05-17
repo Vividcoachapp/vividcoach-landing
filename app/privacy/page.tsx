@@ -1,146 +1,238 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — VividCoach',
-  description: 'How VividCoach collects, uses, and protects your personal information.',
-};
+  description: 'VividCoach Privacy Policy — how we collect, use, and share your information.',
+}
 
 export default function PrivacyPage() {
-  const effective = 'May 16, 2026';
-
   return (
-    <main style={{ background: 'var(--navy)', minHeight: '100vh', padding: '6rem 1.5rem 4rem' }}>
-      <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+    <>
+      <nav className="nav">
+        <a href="/" className="nav-logo">VividCoach</a>
+        <a href="/#waitlist" className="nav-cta">Join beta</a>
+      </nav>
 
-        <p className="section-label">Legal</p>
-        <h1 style={{
-          fontFamily: 'var(--font-fraunces, serif)',
-          fontStyle: 'italic',
-          fontSize: 'clamp(2rem, 5vw, 3rem)',
-          fontWeight: 900,
-          lineHeight: 1.1,
-          letterSpacing: '-0.02em',
-          color: 'var(--text)',
-          marginBottom: '0.5rem',
-        }}>
-          Privacy Policy
-        </h1>
-        <p style={{ color: 'var(--text-dim)', fontSize: '0.875rem', marginBottom: '3rem' }}>
-          Effective {effective}
-        </p>
+      <main className="legal-main">
+        <div className="legal-container">
+          <p className="section-label">Legal</p>
+          <h1 className="legal-title">Privacy Policy</h1>
+          <p className="legal-updated">Effective May 16, 2026 · Last Updated May 16, 2026</p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          <div className="legal-body">
 
-          <Section title="1. Who We Are">
-            <p>VividCoach (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates the VividCoach mobile application and the website at vivid-coach.com. We are committed to protecting your privacy and handling your personal information responsibly.</p>
-            <p>Questions? Email us at <a href="mailto:support@vivid-coach.com" style={{ color: 'var(--cyan)' }}>support@vivid-coach.com</a>.</p>
-          </Section>
-
-          <Section title="2. Information We Collect">
-            <Subsection title="Account Information">
-              When you create an account, we collect your email address and password. You may optionally provide your name.
-            </Subsection>
-            <Subsection title="Health &amp; Fitness Data">
-              With your permission, VividCoach reads data from Apple HealthKit including steps, sleep, calories burned, workout sessions, and heart rate. This data is used solely to give your AI coach full context so you don&rsquo;t have to log everything manually. We do not sell or share your HealthKit data with third parties.
-            </Subsection>
-            <Subsection title="Coaching Conversations">
-              Messages you send to your AI coach are stored to enable long-term memory features, weekly recap generation, and to improve your coaching experience. Conversations are associated with your user account and are not used to train AI models beyond your own session.
-            </Subsection>
-            <Subsection title="Workout &amp; Nutrition Logs">
-              Data you enter about workouts, meals, and body measurements is stored to power progress tracking, goal coaching, and your weekly recap card.
-            </Subsection>
-            <Subsection title="Usage &amp; Analytics">
-              We collect anonymized events such as screen views, feature interactions, and conversion events (e.g., paywall views) to understand how the app is used and improve the product. This data does not include the content of your messages or health metrics.
-            </Subsection>
-            <Subsection title="Device &amp; Technical Information">
-              We collect device type, operating system version, push notification token (for coach reminders), and crash reports to operate and improve the app.
-            </Subsection>
-          </Section>
-
-          <Section title="3. How We Use Your Information">
-            <ul style={{ paddingLeft: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.8 }}>
-              <li>Delivering personalized AI coaching responses and weekly recap cards</li>
-              <li>Sending push notifications for daily check-ins, momentum nudges, and weekly recaps (you control the schedule)</li>
-              <li>Processing subscription payments via RevenueCat</li>
-              <li>Monitoring app health and diagnosing crashes</li>
-              <li>Improving product features based on aggregated, anonymized usage analytics</li>
-            </ul>
-            <p>We do not use your personal data for advertising or sell it to third parties.</p>
-          </Section>
-
-          <Section title="4. Third-Party Services">
-            <p>We share data with the following services to operate the app:</p>
-            <ul style={{ paddingLeft: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.8, marginTop: '0.75rem' }}>
-              <li><strong style={{ color: 'var(--text)' }}>Supabase</strong> — Cloud database and authentication. Stores your account, coaching history, and logs in an encrypted PostgreSQL database (us-west-2 region).</li>
-              <li><strong style={{ color: 'var(--text)' }}>Anthropic / Claude</strong> — Powers your AI coach responses. Your messages and relevant context are sent to Anthropic&rsquo;s API to generate coaching replies. Anthropic does not store your data beyond the API call.</li>
-              <li><strong style={{ color: 'var(--text)' }}>RevenueCat</strong> — Manages subscription purchases and entitlements. RevenueCat processes payment information through Apple&rsquo;s App Store; we do not store credit card data.</li>
-              <li><strong style={{ color: 'var(--text)' }}>Apple HealthKit</strong> — Health data is read on-device only with your explicit permission. HealthKit data is never transmitted off your device to third parties other than being included in your coaching context sent to Anthropic.</li>
-            </ul>
-          </Section>
-
-          <Section title="5. Data Retention">
-            <p>We retain your account and coaching data for as long as your account is active. If you delete your account, your personal data is deleted within 30 days, except where retention is required by law.</p>
-          </Section>
-
-          <Section title="6. Your Rights">
-            <p>Depending on your location, you may have rights to access, correct, or delete your personal data. To exercise these rights or request a copy of your data:</p>
-            <ul style={{ paddingLeft: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.8, marginTop: '0.75rem' }}>
-              <li>Email us at <a href="mailto:support@vivid-coach.com" style={{ color: 'var(--cyan)' }}>support@vivid-coach.com</a></li>
-              <li>Delete your account from the app&rsquo;s Profile &rsaquo; Settings screen</li>
-              <li>Revoke HealthKit access at any time in iOS Settings &rsaquo; Privacy &rsaquo; Health</li>
-              <li>Opt out of push notifications in iOS Settings or in the app&rsquo;s Notification Preferences screen</li>
-            </ul>
-          </Section>
-
-          <Section title="7. Children's Privacy">
-            <p>VividCoach is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
-          </Section>
-
-          <Section title="8. Security">
-            <p>We use industry-standard security measures including encrypted data transmission (TLS), encrypted data storage (AES-256 via Supabase), and row-level security policies to ensure each user can only access their own data. No system is perfectly secure; if you discover a security issue, please contact us immediately at <a href="mailto:support@vivid-coach.com" style={{ color: 'var(--cyan)' }}>support@vivid-coach.com</a>.</p>
-          </Section>
-
-          <Section title="9. Changes to This Policy">
-            <p>We may update this Privacy Policy from time to time. We will notify you of significant changes via a notification in the app or by email. Continued use of VividCoach after changes constitutes your acceptance of the updated policy.</p>
-          </Section>
-
-          <Section title="10. Contact">
-            <p>VividCoach<br />
-            Email: <a href="mailto:support@vivid-coach.com" style={{ color: 'var(--cyan)' }}>support@vivid-coach.com</a><br />
-            Website: <a href="https://vivid-coach.com" style={{ color: 'var(--cyan)' }}>vivid-coach.com</a>
+            <p>
+              VividCoach ("we," "us," or "our") operates the VividCoach fitness coaching application ("App")
+              and website at vivid-coach.com ("Site"). This Privacy Policy explains how we collect, use, and
+              share information about you when you use our App or Site.
             </p>
-          </Section>
 
+            <p>
+              <strong>Contact Us</strong><br />
+              Email: <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a><br />
+              Located in Huntsville, Alabama, United States
+            </p>
+
+            <section className="legal-section">
+              <h2>1. Information We Collect</h2>
+
+              <h3>Information You Provide to Us</h3>
+              <ul>
+                <li><strong>Account information:</strong> Email address, display name, and password when you create an account</li>
+                <li><strong>Profile information:</strong> Fitness goals, current fitness level, and preferences you enter</li>
+                <li><strong>Coaching conversations:</strong> Messages you send to and receive from the AI coaching system</li>
+                <li><strong>Workout data:</strong> Workouts you log, complete, or that are generated for you</li>
+                <li><strong>Waitlist sign-up:</strong> Email address if you join our waitlist at vivid-coach.com</li>
+              </ul>
+
+              <h3>Information We Collect Automatically</h3>
+              <ul>
+                <li><strong>Device information:</strong> Device type, operating system, and unique device identifiers</li>
+                <li><strong>Usage data:</strong> App features used, workouts completed, and session duration</li>
+                <li>
+                  <strong>HealthKit data (iOS):</strong> With your explicit permission, we access step count and workout
+                  data from Apple HealthKit for contest participation and fitness tracking. We do not store HealthKit
+                  data on our servers beyond what is needed for contest administration.
+                </li>
+              </ul>
+            </section>
+
+            <section className="legal-section">
+              <h2>2. How We Use Your Information</h2>
+              <p>We use the information we collect to:</p>
+              <ul>
+                <li>Provide, operate, and improve the App and AI coaching services</li>
+                <li>Generate personalized workout plans and coaching recommendations</li>
+                <li>Process AI coaching requests using third-party AI services (see Section 4)</li>
+                <li>Administer contests and sweepstakes (if you participate)</li>
+                <li>Send push notifications (with your permission)</li>
+                <li>Communicate with you about updates, features, and support</li>
+                <li>Comply with applicable laws and regulations</li>
+              </ul>
+            </section>
+
+            <section className="legal-section">
+              <h2>3. AI Coaching Disclosure</h2>
+              <p>VividCoach uses artificial intelligence to provide fitness coaching and workout recommendations.</p>
+              <p>
+                <strong>Important:</strong> When you send messages to the AI coach, your messages are transmitted to
+                and processed by <strong>Anthropic PBC's</strong> AI API to generate responses. AI coaching responses
+                are generated by AI models and are <strong>not</strong> provided by licensed personal trainers,
+                physicians, dietitians, or other healthcare professionals.
+              </p>
+              <p>
+                AI-generated content is for general fitness and wellness purposes only and <strong>does not constitute
+                medical advice, physical therapy, nutritional counseling, or professional fitness instruction</strong>.
+                Consult a qualified healthcare provider before beginning any new exercise program.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>4. Information We Share With Third Parties</h2>
+              <p>We do not sell your personal information. We share information with the following third-party service providers to operate our services:</p>
+              <table className="legal-table">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Purpose</th>
+                    <th>Data Shared</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Anthropic PBC</strong></td>
+                    <td>AI coaching API</td>
+                    <td>Your coaching messages</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Supabase</strong></td>
+                    <td>Database and authentication</td>
+                    <td>Account data, workouts, coaching history</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Apple</strong></td>
+                    <td>App Store and TestFlight distribution</td>
+                    <td>As required by Apple's platform</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Expo/EAS</strong></td>
+                    <td>App build and distribution</td>
+                    <td>Minimal technical identifiers</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                We may also share information: with your consent; to comply with legal obligations; to protect
+                rights, property, or safety; or in connection with a business transaction.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>5. Contest Data</h2>
+              <p>If you participate in VividCoach contests or sweepstakes:</p>
+              <ul>
+                <li>Your contest participation and performance (e.g., step counts during a contest period) may appear on a leaderboard visible to other participants</li>
+                <li>Contest winners may be publicly announced within the App</li>
+                <li>If you win prizes totaling $600 or more in a calendar year, we are required by federal law to collect your tax information and report it to the IRS</li>
+              </ul>
+              <p>
+                For full contest rules, visit: <a href="/contest-rules">vivid-coach.com/contest-rules</a>
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>6. Data Retention</h2>
+              <p>
+                We retain your information while your account is active. If you delete your account, we delete or
+                anonymize your information within 30 days, except where we are legally required to retain it.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>7. Your Privacy Rights</h2>
+
+              <h3>All Users</h3>
+              <ul>
+                <li><strong>Access and correction:</strong> Update your account information within the App</li>
+                <li><strong>Deletion:</strong> Request deletion of your account by emailing <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a></li>
+                <li><strong>Notifications:</strong> Disable push notifications in your device settings</li>
+              </ul>
+
+              <h3>EU/EEA/UK Users (GDPR)</h3>
+              <p>
+                You have the right to: access your data; correct inaccuracies; request erasure; request data
+                portability; restrict processing; and object to processing. Legal bases for processing include:
+                contract performance, legitimate interests, and consent. To exercise these rights, contact{' '}
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
+              </p>
+
+              <h3>California Residents (CCPA/CPRA)</h3>
+              <p>
+                You have the right to know, delete, correct, and opt out of sale of your personal information.
+                We do not sell personal information. To exercise these rights, contact{' '}
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>8. Children's Privacy</h2>
+              <p>
+                The App is not directed to children under 13. We do not knowingly collect personal information
+                from children under 13. Contest features require participants to be 18 or older. If you believe
+                your child under 13 has provided us personal information, contact{' '}
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>9. Data Security</h2>
+              <p>
+                We implement reasonable technical and organizational measures to protect your personal information.
+                No method of internet transmission or electronic storage is completely secure.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>10. International Data Transfers</h2>
+              <p>
+                Our services are based in the United States. If you access the App from outside the United States,
+                your information may be transferred to and processed in the U.S.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>11. Changes to This Privacy Policy</h2>
+              <p>
+                We may update this Privacy Policy from time to time. We will notify you of material changes by
+                updating the "Last Updated" date and, where appropriate, notifying you through the App or by email.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>12. Contact Us</h2>
+              <p>
+                <strong>VividCoach</strong><br />
+                Email: <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a><br />
+                Website: <a href="https://vivid-coach.com">vivid-coach.com</a>
+              </p>
+              <p>
+                <em>Note: A physical business address will be added once the company virtual mailbox is established.</em>
+              </p>
+            </section>
+
+          </div>
         </div>
-      </div>
-    </main>
-  );
-}
+      </main>
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section>
-      <h2 style={{
-        fontFamily: 'var(--font-fraunces, serif)',
-        fontStyle: 'italic',
-        fontSize: '1.25rem',
-        fontWeight: 700,
-        color: 'var(--cyan)',
-        marginBottom: '0.875rem',
-        letterSpacing: '-0.01em',
-      }}>{title}</h2>
-      <div style={{ color: 'var(--text-dim)', lineHeight: 1.75, fontSize: '0.9375rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-        {children}
-      </div>
-    </section>
-  );
-}
-
-function Subsection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <p style={{ color: 'var(--text)', fontWeight: 600, marginBottom: '0.25rem' }}>{title}</p>
-      <p>{children}</p>
-    </div>
-  );
+      <footer className="footer">
+        <p className="footer-copy">© 2026 VividCoach. All rights reserved.</p>
+        <nav className="footer-links">
+          <a href="/privacy" className="footer-link">Privacy Policy</a>
+          <a href="/terms" className="footer-link">Terms of Service</a>
+          <a href="/contest-rules" className="footer-link">Contest Rules</a>
+          <a href="#support" className="footer-link">Support</a>
+        </nav>
+      </footer>
+    </>
+  )
 }

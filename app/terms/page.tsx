@@ -1,131 +1,253 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms of Service — VividCoach',
-  description: 'The terms governing your use of VividCoach.',
-};
-
-export default function TermsPage() {
-  const effective = 'May 16, 2026';
-
-  return (
-    <main style={{ background: 'var(--navy)', minHeight: '100vh', padding: '6rem 1.5rem 4rem' }}>
-      <div style={{ maxWidth: '680px', margin: '0 auto' }}>
-
-        <p className="section-label">Legal</p>
-        <h1 style={{
-          fontFamily: 'var(--font-fraunces, serif)',
-          fontStyle: 'italic',
-          fontSize: 'clamp(2rem, 5vw, 3rem)',
-          fontWeight: 900,
-          lineHeight: 1.1,
-          letterSpacing: '-0.02em',
-          color: 'var(--text)',
-          marginBottom: '0.5rem',
-        }}>
-          Terms of Service
-        </h1>
-        <p style={{ color: 'var(--text-dim)', fontSize: '0.875rem', marginBottom: '3rem' }}>
-          Effective {effective}
-        </p>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-
-          <Section title="1. Acceptance of Terms">
-            <p>By downloading, installing, or using the VividCoach mobile application or website (collectively, the &ldquo;Service&rdquo;), you agree to these Terms of Service. If you do not agree, do not use the Service.</p>
-          </Section>
-
-          <Section title="2. Description of Service">
-            <p>VividCoach is a personalized AI fitness coaching application that provides coaching conversations, workout and nutrition logging, progress tracking, and accountability features. The AI coach is powered by large language models and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
-          </Section>
-
-          <Section title="3. Eligibility">
-            <p>You must be at least 13 years old to use VividCoach. By using the Service, you represent that you meet this requirement. If you are under 18, you represent that your parent or legal guardian has reviewed and agreed to these Terms.</p>
-          </Section>
-
-          <Section title="4. Health Disclaimer">
-            <p>VividCoach provides general fitness guidance through AI coaching. This is <strong style={{ color: 'var(--text)' }}>not medical advice</strong>. Always consult a qualified healthcare professional before beginning any exercise or nutrition program, especially if you have pre-existing medical conditions. VividCoach is not responsible for any injury, illness, or adverse health outcome resulting from your use of the Service.</p>
-          </Section>
-
-          <Section title="5. Account Registration">
-            <p>You must create an account to use most features of VividCoach. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately at <a href="mailto:support@vivid-coach.com" style={{ color: 'var(--cyan)' }}>support@vivid-coach.com</a> if you suspect unauthorized access.</p>
-          </Section>
-
-          <Section title="6. Subscriptions and Billing">
-            <p>VividCoach offers subscription plans (Premium) that unlock additional features. Subscriptions are processed through Apple&rsquo;s App Store. By subscribing, you agree to Apple&rsquo;s payment terms.</p>
-            <ul style={{ paddingLeft: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.8 }}>
-              <li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date.</li>
-              <li>Manage or cancel subscriptions in your Apple ID account settings.</li>
-              <li>Refunds are governed by Apple&rsquo;s refund policy. Contact Apple Support for refund requests.</li>
-              <li>We may change subscription pricing with advance notice. Continued use after a price change constitutes acceptance.</li>
-            </ul>
-          </Section>
-
-          <Section title="7. Acceptable Use">
-            <p>You agree not to:</p>
-            <ul style={{ paddingLeft: '1.25rem', color: 'var(--text-dim)', lineHeight: 1.8 }}>
-              <li>Use the Service for any unlawful purpose</li>
-              <li>Attempt to reverse engineer, decompile, or extract the source code of the app</li>
-              <li>Share your account with others or resell access to the Service</li>
-              <li>Submit false, misleading, or harmful content through the coaching interface</li>
-              <li>Attempt to circumvent rate limits, subscription gates, or other access controls</li>
-              <li>Use automated scripts or bots to interact with the Service</li>
-            </ul>
-          </Section>
-
-          <Section title="8. Intellectual Property">
-            <p>All content, design, code, and features of VividCoach are owned by or licensed to us. The AI coaching responses generated for you are provided for your personal use only and may not be reproduced or distributed commercially without our written permission.</p>
-            <p>You retain ownership of data you input into VividCoach (your workout logs, goals, conversations). You grant us a limited license to use that data to operate and improve the Service as described in our Privacy Policy.</p>
-          </Section>
-
-          <Section title="9. Limitation of Liability">
-            <p>To the maximum extent permitted by law, VividCoach and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service, including but not limited to health outcomes, data loss, or service interruptions. Our total liability for any claim shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
-          </Section>
-
-          <Section title="10. Disclaimer of Warranties">
-            <p>The Service is provided &ldquo;as is&rdquo; without warranties of any kind. We do not warrant that the Service will be uninterrupted, error-free, or that AI coaching responses will be accurate or appropriate for your specific situation.</p>
-          </Section>
-
-          <Section title="11. Termination">
-            <p>We reserve the right to suspend or terminate your account if you violate these Terms. You may delete your account at any time from the app&rsquo;s Profile screen or by contacting us. Upon termination, your access to the Service ends immediately.</p>
-          </Section>
-
-          <Section title="12. Changes to Terms">
-            <p>We may update these Terms from time to time. We will notify you of material changes via the app or email. Continued use of the Service after changes constitutes your acceptance of the updated Terms.</p>
-          </Section>
-
-          <Section title="13. Governing Law">
-            <p>These Terms are governed by the laws of the United States. Any disputes shall be resolved through binding arbitration or in courts of competent jurisdiction in the United States.</p>
-          </Section>
-
-          <Section title="14. Contact">
-            <p>VividCoach<br />
-            Email: <a href="mailto:support@vivid-coach.com" style={{ color: 'var(--cyan)' }}>support@vivid-coach.com</a><br />
-            Website: <a href="https://vivid-coach.com" style={{ color: 'var(--cyan)' }}>vivid-coach.com</a>
-            </p>
-          </Section>
-
-        </div>
-      </div>
-    </main>
-  );
+  description: 'VividCoach Terms of Service — the legal agreement governing your use of the VividCoach app.',
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+export default function TermsPage() {
   return (
-    <section>
-      <h2 style={{
-        fontFamily: 'var(--font-fraunces, serif)',
-        fontStyle: 'italic',
-        fontSize: '1.25rem',
-        fontWeight: 700,
-        color: 'var(--cyan)',
-        marginBottom: '0.875rem',
-        letterSpacing: '-0.01em',
-      }}>{title}</h2>
-      <div style={{ color: 'var(--text-dim)', lineHeight: 1.75, fontSize: '0.9375rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-        {children}
-      </div>
-    </section>
-  );
+    <>
+      <nav className="nav">
+        <a href="/" className="nav-logo">VividCoach</a>
+        <a href="/#waitlist" className="nav-cta">Join beta</a>
+      </nav>
+
+      <main className="legal-main">
+        <div className="legal-container">
+          <p className="section-label">Legal</p>
+          <h1 className="legal-title">Terms of Service</h1>
+          <p className="legal-updated">Effective May 16, 2026 · Last Updated May 16, 2026</p>
+
+          <div className="legal-body">
+
+            <p>
+              These Terms of Service ("Terms") are a legal agreement between you and VividCoach ("we," "us," or "our")
+              governing your use of the VividCoach fitness coaching application ("App") and website at vivid-coach.com ("Site").
+            </p>
+
+            <p>
+              <strong>By creating an account or using the App, you agree to these Terms. If you do not agree, do not use the App.</strong>
+            </p>
+
+            <p>
+              <strong>Contact:</strong>{' '}
+              <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>{' '}
+              | vivid-coach.com | Huntsville, Alabama, United States
+            </p>
+
+            <section className="legal-section">
+              <h2>1. Eligibility</h2>
+              <p>
+                You must be at least 18 years old to use VividCoach or participate in contests. By using the App, you
+                represent that you are 18 or older and have the legal capacity to enter into these Terms. The App is
+                intended for users in the United States; use outside the United States is at your own risk and subject
+                to local laws.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>2. Account Registration</h2>
+              <p>You must create an account to use the App. You agree to:</p>
+              <ul>
+                <li>Provide accurate and complete registration information</li>
+                <li>Keep your password secure and confidential</li>
+                <li>Notify us immediately of any unauthorized access at <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a></li>
+                <li>Not share your account with anyone else</li>
+              </ul>
+              <p>You are responsible for all activity under your account.</p>
+            </section>
+
+            <section className="legal-section">
+              <h2>3. Subscription and Billing</h2>
+
+              <h3>3.1 Subscription Plans</h3>
+              <p>
+                VividCoach offers a free tier and paid Premium subscription plans. Current pricing is displayed in the
+                App and on the App Store listing. Prices may change with notice.
+              </p>
+
+              <h3>3.2 Billing and Auto-Renewal</h3>
+              <p>
+                Paid subscriptions are billed through Apple's App Store. Your subscription will automatically renew
+                unless you cancel at least 24 hours before the end of the current billing period. Apple handles all
+                billing, refunds, and subscription management.
+              </p>
+
+              <h3>3.3 Cancellation</h3>
+              <p>
+                To cancel your subscription, go to your device's Settings &gt; Apple ID &gt; Subscriptions. Cancellation
+                takes effect at the end of the current billing period. We do not offer refunds for partial subscription
+                periods, except where required by law.
+              </p>
+
+              <h3>3.4 Free Trials</h3>
+              <p>
+                If we offer a free trial, it will convert to a paid subscription at the end of the trial period unless
+                you cancel before the trial ends.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>4. AI Coaching — Important Disclaimer</h2>
+              <p>VividCoach uses artificial intelligence to provide fitness coaching and workout recommendations.</p>
+
+              <p><strong>AI-generated coaching content is NOT:</strong></p>
+              <ul>
+                <li>Medical advice, physical therapy, or healthcare services</li>
+                <li>Advice from licensed personal trainers, dietitians, or healthcare professionals</li>
+                <li>A substitute for consultation with a qualified healthcare provider</li>
+              </ul>
+
+              <p>
+                <strong>Before beginning any exercise program, consult a qualified healthcare provider</strong>, especially
+                if you have any medical conditions, injuries, or health concerns. You assume all risk of injury or health
+                effects from following AI coaching recommendations.
+              </p>
+
+              <p>
+                When you use the AI coaching feature, your messages are processed by Anthropic PBC's AI API. See our{' '}
+                <a href="/privacy">Privacy Policy</a> for details.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>5. Contests and Sweepstakes</h2>
+              <p>
+                VividCoach may offer fitness contests and sweepstakes. All contests are governed by the{' '}
+                <a href="/contest-rules">Official Contest Rules</a>, which are incorporated into these Terms. By
+                participating in any contest, you agree to the Official Contest Rules.
+              </p>
+              <p>Key contest requirements:</p>
+              <ul>
+                <li>Participants must be 18 or older and legal U.S. residents</li>
+                <li>Cash prizes of $600 or more per year require IRS tax reporting (we will collect your tax information before paying)</li>
+                <li>VividCoach reserves the right to disqualify participants who violate contest rules or these Terms</li>
+              </ul>
+            </section>
+
+            <section className="legal-section">
+              <h2>6. Acceptable Use</h2>
+              <p>You agree not to:</p>
+              <ul>
+                <li>Use the App for any unlawful purpose</li>
+                <li>Attempt to reverse engineer, decompile, or hack the App</li>
+                <li>Scrape, copy, or redistribute App content</li>
+                <li>Use automated means to access the App without permission</li>
+                <li>Post false, misleading, or harmful content</li>
+                <li>Attempt to access other users' accounts</li>
+                <li>Use the App in any way that could damage, disable, or impair our systems</li>
+              </ul>
+            </section>
+
+            <section className="legal-section">
+              <h2>7. Intellectual Property</h2>
+              <p>
+                The App, including its content, features, and functionality, is owned by VividCoach and protected by
+                copyright, trademark, and other intellectual property laws. You are granted a limited, non-exclusive,
+                non-transferable license to use the App for personal, non-commercial fitness purposes.
+              </p>
+              <p>
+                You retain ownership of content you submit (such as coaching messages and workout logs). By submitting
+                content, you grant VividCoach a license to use it to provide and improve our services.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>8. Privacy</h2>
+              <p>
+                Our <a href="/privacy">Privacy Policy</a> explains how we collect, use, and share your information. By
+                using the App, you agree to our Privacy Policy.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>9. Disclaimer of Warranties</h2>
+              <p>
+                THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED,
+                INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+                NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE OF VIRUSES.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>10. Limitation of Liability</h2>
+              <p>
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, VIVIDCOACH SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+                SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT
+                OF OR RELATING TO YOUR USE OF THE APP. OUR TOTAL LIABILITY TO YOU FOR ANY CLAIM ARISING FROM THESE TERMS
+                OR YOUR USE OF THE APP SHALL NOT EXCEED THE AMOUNT YOU PAID TO US IN THE 12 MONTHS BEFORE THE CLAIM.
+              </p>
+              <p>
+                SOME JURISDICTIONS DO NOT ALLOW LIMITATION OF LIABILITY FOR CERTAIN TYPES OF DAMAGES, SO SOME OF THE
+                ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>11. Indemnification</h2>
+              <p>
+                You agree to indemnify and hold harmless VividCoach and its officers, directors, employees, and agents
+                from any claims, damages, liabilities, and expenses (including attorneys' fees) arising from your use
+                of the App, your violation of these Terms, or your violation of any third-party rights.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>12. Governing Law and Dispute Resolution</h2>
+              <p>
+                These Terms are governed by the laws of the State of Alabama, without regard to conflict of law
+                principles. Any dispute arising from these Terms or your use of the App shall be resolved by binding
+                arbitration in Huntsville, Alabama, under the rules of the American Arbitration Association, except
+                that either party may seek injunctive relief in a court of competent jurisdiction.
+              </p>
+              <p>You waive any right to participate in a class action lawsuit or class-wide arbitration.</p>
+            </section>
+
+            <section className="legal-section">
+              <h2>13. Termination</h2>
+              <p>
+                We may suspend or terminate your account at any time for violation of these Terms. You may delete your
+                account by contacting <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>. Upon
+                termination, your right to use the App ends immediately. Sections 4, 9, 10, 11, and 12 survive
+                termination.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>14. Changes to These Terms</h2>
+              <p>
+                We may update these Terms from time to time. We will notify you of material changes by updating the
+                "Last Updated" date and, where appropriate, through the App or by email. Continued use of the App
+                after changes constitutes acceptance of the updated Terms.
+              </p>
+            </section>
+
+            <section className="legal-section">
+              <h2>15. Contact Us</h2>
+              <p>
+                <strong>VividCoach</strong><br />
+                Email: <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a><br />
+                Website: <a href="https://vivid-coach.com">vivid-coach.com</a>
+              </p>
+              <p>
+                <em>Note: A physical business address will be added once the company virtual mailbox is established.</em>
+              </p>
+            </section>
+
+          </div>
+        </div>
+      </main>
+
+      <footer className="footer">
+        <p className="footer-copy">© 2026 VividCoach. All rights reserved.</p>
+        <nav className="footer-links">
+          <a href="/privacy" className="footer-link">Privacy Policy</a>
+          <a href="/terms" className="footer-link">Terms of Service</a>
+          <a href="/contest-rules" className="footer-link">Contest Rules</a>
+          <a href="#support" className="footer-link">Support</a>
+        </nav>
+      </footer>
+    </>
+  )
 }
