@@ -188,8 +188,8 @@ export default async function Home() {
             We&apos;re a small team and we read every message. Reach out and
             we&apos;ll get back to you as fast as we can.
           </p>
-          <a href="mailto:vividcoachceo@proton.me" className="support-link">
-            vividcoachceo@proton.me
+          <a href="mailto:support@vivid-coach.com" className="support-link">
+            support@vivid-coach.com
           </a>
 
           <div className="feedback-block">
@@ -197,8 +197,8 @@ export default async function Home() {
             <p className="support-body">
               Have a feature idea or feedback for the beta? We&apos;d love to hear it.
             </p>
-            <a href="mailto:vividcoachceo@proton.me" className="support-link">
-              vividcoachceo@proton.me
+            <a href="mailto:feedback@vivid-coach.com" className="support-link">
+              feedback@vivid-coach.com
             </a>
           </div>
         </section>
@@ -209,8 +209,7 @@ export default async function Home() {
         <p className="footer-copy">© 2026 VividCoach. All rights reserved.</p>
         <nav className="footer-links">
           <a href="/privacy" className="footer-link">Privacy Policy</a>
-          <a href="/terms" className="footer-link">Terms of Service</a>
-          <a href="/contest-rules" className="footer-link">Contest Rules</a>
+          <a href="/terms" className="footer-link">Terms of Use</a>
           <a href="#support" className="footer-link">Support</a>
         </nav>
       </footer>
