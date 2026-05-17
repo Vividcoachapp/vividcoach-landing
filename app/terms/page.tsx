@@ -32,7 +32,7 @@ export default function TermsPage() {
 
             <p>
               <strong>Contact:</strong>{' '}
-              <a href="mailto:support@vividcoach.app">support@vividcoach.app</a>{' '}
+              <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>{' '}
               | vivid-coach.com | Huntsville, Alabama, United States
             </p>
 
@@ -52,7 +52,7 @@ export default function TermsPage() {
               <ul>
                 <li>Provide accurate and complete registration information</li>
                 <li>Keep your password secure and confidential</li>
-                <li>Notify us immediately of any unauthorized access at <a href="mailto:support@vividcoach.app">support@vividcoach.app</a></li>
+                <li>Notify us immediately of any unauthorized access at <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a></li>
                 <li>Not share your account with anyone else</li>
               </ul>
               <p>You are responsible for all activity under your account.</p>
@@ -208,7 +208,7 @@ export default function TermsPage() {
               <h2>13. Termination</h2>
               <p>
                 We may suspend or terminate your account at any time for violation of these Terms. You may delete your
-                account by contacting <a href="mailto:support@vividcoach.app">support@vividcoach.app</a>. Upon
+                account by contacting <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>. Upon
                 termination, your right to use the App ends immediately. Sections 4, 9, 10, 11, and 12 survive
                 termination.
               </p>
@@ -227,7 +227,7 @@ export default function TermsPage() {
               <h2>15. Contact Us</h2>
               <p>
                 <strong>VividCoach</strong><br />
-                Email: <a href="mailto:support@vividcoach.app">support@vividcoach.app</a><br />
+                Email: <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a><br />
                 Website: <a href="https://vivid-coach.com">vivid-coach.com</a>
               </p>
               <p>

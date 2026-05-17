@@ -29,7 +29,7 @@ export default function PrivacyPage() {
 
             <p>
               <strong>Contact Us</strong><br />
-              Email: <a href="mailto:support@vividcoach.app">support@vividcoach.app</a><br />
+              Email: <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a><br />
               Located in Huntsville, Alabama, United States
             </p>
 
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
               <h3>All Users</h3>
               <ul>
                 <li><strong>Access and correction:</strong> Update your account information within the App</li>
-                <li><strong>Deletion:</strong> Request deletion of your account by emailing <a href="mailto:support@vividcoach.app">support@vividcoach.app</a></li>
+                <li><strong>Deletion:</strong> Request deletion of your account by emailing <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a></li>
                 <li><strong>Notifications:</strong> Disable push notifications in your device settings</li>
               </ul>
 
@@ -163,14 +163,14 @@ export default function PrivacyPage() {
                 You have the right to: access your data; correct inaccuracies; request erasure; request data
                 portability; restrict processing; and object to processing. Legal bases for processing include:
                 contract performance, legitimate interests, and consent. To exercise these rights, contact{' '}
-                <a href="mailto:support@vividcoach.app">support@vividcoach.app</a>.
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
               </p>
 
               <h3>California Residents (CCPA/CPRA)</h3>
               <p>
                 You have the right to know, delete, correct, and opt out of sale of your personal information.
                 We do not sell personal information. To exercise these rights, contact{' '}
-                <a href="mailto:support@vividcoach.app">support@vividcoach.app</a>.
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
               </p>
             </section>
 
@@ -180,7 +180,7 @@ export default function PrivacyPage() {
                 The App is not directed to children under 13. We do not knowingly collect personal information
                 from children under 13. Contest features require participants to be 18 or older. If you believe
                 your child under 13 has provided us personal information, contact{' '}
-                <a href="mailto:support@vividcoach.app">support@vividcoach.app</a>.
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
               </p>
             </section>
 
@@ -212,7 +212,7 @@ export default function PrivacyPage() {
               <h2>12. Contact Us</h2>
               <p>
                 <strong>VividCoach</strong><br />
-                Email: <a href="mailto:support@vividcoach.app">support@vividcoach.app</a><br />
+                Email: <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a><br />
                 Website: <a href="https://vivid-coach.com">vivid-coach.com</a>
               </p>
               <p>

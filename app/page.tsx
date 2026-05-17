@@ -188,8 +188,8 @@ export default async function Home() {
             We&apos;re a small team and we read every message. Reach out and
             we&apos;ll get back to you as fast as we can.
           </p>
-          <a href="mailto:support@vivid-coach.com" className="support-link">
-            support@vivid-coach.com
+          <a href="mailto:vividcoachceo@proton.me" className="support-link">
+            vividcoachceo@proton.me
           </a>
 
           <div className="feedback-block">
@@ -197,8 +197,8 @@ export default async function Home() {
             <p className="support-body">
               Have a feature idea or feedback for the beta? We&apos;d love to hear it.
             </p>
-            <a href="mailto:feedback@vivid-coach.com" className="support-link">
-              feedback@vivid-coach.com
+            <a href="mailto:vividcoachceo@proton.me" className="support-link">
+              vividcoachceo@proton.me
             </a>
           </div>
         </section>

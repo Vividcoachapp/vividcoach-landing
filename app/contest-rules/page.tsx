@@ -37,7 +37,7 @@ export default function ContestRulesPage() {
 
             <section className="legal-section">
               <h2>2. Sponsor</h2>
-              <p>VividCoach, LLC — Huntsville, AL — contact@vividcoach.app</p>
+              <p>VividCoach, LLC — Huntsville, AL — vividcoachceo@proton.me</p>
             </section>
 
             <section className="legal-section">
@@ -62,7 +62,7 @@ export default function ContestRulesPage() {
               </p>
               <p className="legal-amendment">
                 <strong>Alternative Entry (7-Day Streak Sweepstakes):</strong> Alternative entry: email{' '}
-                <a href="mailto:contest@vividcoach.app">contest@vividcoach.app</a> with your name and Contest
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a> with your name and Contest
                 name. One alt entry per person per Contest week.
               </p>
             </section>
@@ -159,7 +159,7 @@ export default function ContestRulesPage() {
               <h2>Questions</h2>
               <p>
                 Questions about these Official Rules? Contact us at{' '}
-                <a href="mailto:contest@vividcoach.app">contest@vividcoach.app</a>.
+                <a href="mailto:vividcoachceo@proton.me">vividcoachceo@proton.me</a>.
               </p>
             </section>
 
