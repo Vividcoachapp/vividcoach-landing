@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <div className="legal-container">
           <p className="section-label">Legal</p>
           <h1 className="legal-title">Privacy Policy</h1>
-          <p className="legal-updated">Effective May 16, 2026 · Last Updated May 16, 2026</p>
+          <p className="legal-updated">Effective May 19, 2026 · Last Updated May 19, 2026</p>
 
           <div className="legal-body">
 
@@ -42,6 +42,8 @@ export default function PrivacyPage() {
                 <li><strong>Profile information:</strong> Fitness goals, current fitness level, and preferences you enter</li>
                 <li><strong>Coaching conversations:</strong> Messages you send to and receive from the AI coaching system</li>
                 <li><strong>Workout data:</strong> Workouts you log, complete, or that are generated for you</li>
+                <li><strong>Body weight measurements:</strong> When you log your weight in-app, we store the reading (in pounds or kilograms), timestamp, and any optional notes you add</li>
+                <li><strong>Meal/nutrition data:</strong> Meal type (breakfast/lunch/dinner/snack), free-text meal description, optional meal photo, and sentiment tag (light/good/heavy) for each meal you log</li>
                 <li><strong>Waitlist sign-up:</strong> Email address if you join our waitlist at vivid-coach.com</li>
               </ul>
 
@@ -50,9 +52,15 @@ export default function PrivacyPage() {
                 <li><strong>Device information:</strong> Device type, operating system, and unique device identifiers</li>
                 <li><strong>Usage data:</strong> App features used, workouts completed, and session duration</li>
                 <li>
-                  <strong>HealthKit data (iOS):</strong> With your explicit permission, we access step count and workout
-                  data from Apple HealthKit for contest participation and fitness tracking. We do not store HealthKit
-                  data on our servers beyond what is needed for contest administration.
+                  <strong>HealthKit data (iOS) — expanded:</strong> With your explicit permission, we read the following
+                  categories from Apple HealthKit: <strong>step count</strong>, <strong>workouts</strong> (including
+                  duration, type, calories, and heart rate during workouts), and <strong>body weight</strong>. We write
+                  the following categories to Apple HealthKit: <strong>workouts you log in VividCoach</strong> and{' '}
+                  <strong>body weight readings you log in VividCoach</strong>. You control every HealthKit category
+                  individually in iOS Settings &gt; Privacy &amp; Security &gt; Health, and you can revoke any read or
+                  write permission at any time. We do not store HealthKit data on our servers beyond what is needed for
+                  contest administration and the in-app features that depend on it (such as workout history and weight
+                  trends).
                 </li>
               </ul>
             </section>
@@ -63,6 +71,9 @@ export default function PrivacyPage() {
               <ul>
                 <li>Provide, operate, and improve the App and AI coaching services</li>
                 <li>Generate personalized workout plans and coaching recommendations</li>
+                <li>Provide nutrition tracking and meal coaching context</li>
+                <li>Provide weight trend visualization and goal tracking</li>
+                <li>Sync workout and weight data bidirectionally with Apple Health (when you grant permission)</li>
                 <li>Process AI coaching requests using third-party AI services (see Section 4)</li>
                 <li>Administer contests and sweepstakes (if you participate)</li>
                 <li>Send push notifications (with your permission)</li>
@@ -84,6 +95,10 @@ export default function PrivacyPage() {
                 AI-generated content is for general fitness and wellness purposes only and <strong>does not constitute
                 medical advice, physical therapy, nutritional counseling, or professional fitness instruction</strong>.
                 Consult a qualified healthcare provider before beginning any new exercise program.
+              </p>
+              <p>
+                Meal descriptions and weight readings you log may be summarized into prompts sent to the AI coach
+                (Anthropic's API) to provide contextual coaching responses.
               </p>
             </section>
 

@@ -17,7 +17,7 @@ export default function TermsPage() {
         <div className="legal-container">
           <p className="section-label">Legal</p>
           <h1 className="legal-title">Terms of Service</h1>
-          <p className="legal-updated">Effective May 16, 2026 · Last Updated May 16, 2026</p>
+          <p className="legal-updated">Effective May 19, 2026 · Last Updated May 19, 2026</p>
 
           <div className="legal-body">
 
@@ -108,6 +108,15 @@ export default function TermsPage() {
               <p>
                 When you use the AI coaching feature, your messages are processed by Anthropic PBC's AI API. See our{' '}
                 <a href="/privacy">Privacy Policy</a> for details.
+              </p>
+
+              <p>
+                <strong>Nutrition and weight tracking.</strong> Nutrition tracking and weight tracking features in the
+                App are for personal logging and AI-coaching-context purposes only. They are <strong>NOT</strong>{' '}
+                nutritional counseling, dietary advice from a registered dietitian, or medical weight-management
+                treatment. AI-generated suggestions about meals or weight trends are general fitness coaching content,
+                not clinical recommendations. Consult a qualified healthcare provider or registered dietitian for
+                medical nutrition therapy, eating disorder concerns, or any health condition affected by diet or weight.
               </p>
             </section>
 
