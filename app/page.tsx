@@ -17,28 +17,30 @@ async function getWaitlistCount(): Promise<number> {
 
 export const revalidate = 60
 
-// Zoe | Andre | Chloe — ordered for visual balance (2 women bookend 1 man)
+const LAUNCH_STATE = (process.env.NEXT_PUBLIC_LAUNCH_STATE ?? 'waitlist') as 'waitlist' | 'live'
+
+// Chloe (warm) | Carmen (direct) | Andre (intense) — vibe spectrum, all free tier
 const coaches = [
-  {
-    name: 'Zoe',
-    specialty: 'HIIT & functional training',
-    image: '/coaches/zoe.png',
-    quote:
-      'My sessions leave people exhausted, proud, and already thinking about the next one.',
-  },
-  {
-    name: 'Marcus',
-    specialty: 'Strength & everyday athletes',
-    image: '/coaches/marcus.png',
-    quote:
-      'I know exactly when to push harder and when to back off. That\'s the difference between results and burnout.',
-  },
   {
     name: 'Chloe',
     specialty: 'Group fitness & real relationships',
     image: '/coaches/chloe.png',
     quote:
       'Most fitness struggles aren\'t about willpower — they\'re about finding the right approach for the right person.',
+  },
+  {
+    name: 'Carmen',
+    specialty: 'Strength & performance',
+    image: '/coaches/carmen.png',
+    quote:
+      'I don\'t soften feedback. I respect you enough to be direct — and that\'s exactly why people hit their goals with me.',
+  },
+  {
+    name: 'Andre',
+    specialty: 'HIIT & conditioning',
+    image: '/coaches/andre.png',
+    quote:
+      'The sessions that change you are the ones you didn\'t think you could finish. I\'ll be there for every one of those.',
   },
 ]
 
@@ -72,9 +74,24 @@ export default async function Home() {
             about it from day one.
           </p>
 
-          <a href="#waitlist" className="hero-cta">
-            Join the beta waitlist
-          </a>
+          {LAUNCH_STATE === 'live' ? (
+            <a
+              href="https://apps.apple.com/app/vividcoach/id6744742860"
+              className="hero-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download on the App Store
+            </a>
+          ) : (
+            <a href="#waitlist" className="hero-cta">
+              Join the beta waitlist
+            </a>
+          )}
+
+          <p className="hero-campaign">
+            Your last fitness app didn&rsquo;t get you. VividCoach does.
+          </p>
 
           <div className="hero-scroll-hint" aria-hidden>
             <span>scroll</span>

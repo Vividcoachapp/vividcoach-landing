@@ -102,7 +102,7 @@ body {
   transform: translateX(-50%);
   width: 140%;
   height: 70%;
-  background: radial-gradient(ellipse at 50% 0%, rgba(125, 249, 255, 0.12) 0%, transparent 65%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 240, 228, 0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -175,16 +175,24 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 0 32px rgba(125, 249, 255, 0.3);
+  box-shadow: 0 0 32px rgba(0, 240, 228, 0.3);
 }
 
 .hero-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 48px rgba(125, 249, 255, 0.45);
+  box-shadow: 0 0 48px rgba(0, 240, 228, 0.45);
 }
 
 .hero-cta:active {
   transform: translateY(0);
+}
+
+.hero-campaign {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  font-style: italic;
+  letter-spacing: 0.01em;
 }
 
 .hero-scroll-hint {
