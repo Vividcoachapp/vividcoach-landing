@@ -229,9 +229,9 @@ export default async function Home() {
           <h2 className="pricing-title">Simple. Honest. No games.</h2>
           <div className="pricing-card">
             <div className="pricing-amount">
-              <span className="pricing-monthly">$12.99<span className="pricing-period">/month</span></span>
+              <span className="pricing-monthly">$11.99<span className="pricing-period">/month</span></span>
               <span className="pricing-or">or</span>
-              <span className="pricing-yearly">$99<span className="pricing-period">/year</span></span>
+              <span className="pricing-yearly">$59.99<span className="pricing-period">/year</span></span>
             </div>
             <p className="pricing-note">No upsells. Cancel anytime.</p>
           </div>
