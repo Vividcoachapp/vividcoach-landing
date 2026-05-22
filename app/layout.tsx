@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: 'VividCoach — A coach who actually gets you.',
     description:
       'Bad knee. Post-pregnancy comeback. Gym anxiety. VividCoach knows about it from day one.',
+    images: ['/opengraph-image'],
   },
   other: {
     'theme-color': '#07090F',
