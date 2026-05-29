@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
 import WaitlistForm from './components/WaitlistForm'
 
@@ -108,8 +109,12 @@ export default async function Home() {
             <div className="hero-collage">
               {coaches.map((coach, i) => (
                 <div key={coach.name} className={`hero-collage-item hero-collage-${i + 1}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={coach.image} alt="" />
+                  <Image
+                    src={coach.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 900px) 0px, 460px"
+                  />
                   <span className="hero-collage-label">{coach.name}</span>
                 </div>
               ))}
@@ -205,10 +210,11 @@ export default async function Home() {
             {coaches.map((coach) => (
               <div key={coach.name} className="coach-card">
                 <div className="coach-photo-wrap">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={coach.image}
                     alt={`${coach.name}, VividCoach`}
+                    fill
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 30vw, 400px"
                     className="coach-photo"
                   />
                   <div className="coach-photo-overlay" aria-hidden />
