@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
 import WaitlistForm from './components/WaitlistForm'
+import HeroMockup from './components/HeroMockup'
+import AnimatedCounter from './components/AnimatedCounter'
 
 async function getWaitlistCount(): Promise<number> {
   try {
@@ -59,8 +61,12 @@ export default async function Home() {
       <main>
         {/* ── HERO ──────────────────────────────────────── */}
         <section className="hero">
+          <div className="hero-bg" aria-hidden />
           <div className="hero-glow" aria-hidden />
           <div className="hero-glow-2" aria-hidden />
+          <div className="hero-orb-1" aria-hidden />
+          <div className="hero-orb-2" aria-hidden />
+          <div className="hero-orb-3" aria-hidden />
 
           {/* Left column: copy */}
           <div className="hero-content">
@@ -104,21 +110,9 @@ export default async function Home() {
             </p>
           </div>
 
-          {/* Right column: coach photo collage (desktop only) */}
+          {/* Right column: animated app mockup (desktop only) */}
           <div className="hero-visual" aria-hidden>
-            <div className="hero-collage">
-              {coaches.map((coach, i) => (
-                <div key={coach.name} className={`hero-collage-item hero-collage-${i + 1}`}>
-                  <Image
-                    src={coach.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 900px) 0px, 460px"
-                  />
-                  <span className="hero-collage-label">{coach.name}</span>
-                </div>
-              ))}
-            </div>
+            <HeroMockup />
           </div>
 
           <div className="hero-scroll-hint" aria-hidden>
@@ -131,7 +125,9 @@ export default async function Home() {
         <div className="stats-bar">
           <div className="stats-inner">
             <div className="stat-item">
-              <span className="stat-number">30<span className="stat-plus">+</span></span>
+              <span className="stat-number">
+                <AnimatedCounter target={30} /><span className="stat-plus">+</span>
+              </span>
               <span className="stat-label">AI coaches, all included</span>
             </div>
             <div className="stat-divider" aria-hidden />
@@ -206,22 +202,22 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="coaches-grid">
-            {coaches.map((coach) => (
-              <div key={coach.name} className="coach-card">
-                <div className="coach-photo-wrap">
+          <div className="coaches-list">
+            {coaches.map((coach, i) => (
+              <div key={coach.name} className={`coach-row${i % 2 === 1 ? ' coach-row-reverse' : ''}`}>
+                <div className="coach-row-photo">
                   <Image
                     src={coach.image}
                     alt={`${coach.name}, VividCoach`}
                     fill
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 30vw, 400px"
+                    sizes="(max-width: 768px) 90vw, 45vw"
                     className="coach-photo"
                   />
                   <div className="coach-photo-overlay" aria-hidden />
                 </div>
-                <div className="coach-caption">
-                  <div className="coach-name">{coach.name}</div>
+                <div className="coach-row-content">
                   <div className="coach-specialty">{coach.specialty}</div>
+                  <div className="coach-name">{coach.name}</div>
                   <blockquote className="coach-quote">
                     &ldquo;{coach.quote}&rdquo;
                   </blockquote>
