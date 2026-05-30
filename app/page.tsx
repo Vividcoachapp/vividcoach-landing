@@ -5,6 +5,7 @@ import HeroMockup from './components/HeroMockup'
 import AnimatedCounter from './components/AnimatedCounter'
 import ParticleField from './components/ParticleField'
 import Marquee from './components/Marquee'
+import HeroVideo from './components/HeroVideo'
 
 async function getWaitlistCount(): Promise<number> {
   try {
@@ -107,6 +108,7 @@ export default async function Home() {
         {/* ── HERO ──────────────────────────────────────── */}
         <section className="hero">
           <div className="hero-bg" aria-hidden />
+          <HeroVideo />
           <div className="hero-glow" aria-hidden />
           <div className="hero-glow-2" aria-hidden />
           <div className="hero-orb-1" aria-hidden />
