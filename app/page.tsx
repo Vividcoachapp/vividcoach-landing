@@ -118,7 +118,7 @@ export default async function Home() {
           <div className="hero-content">
             <div className="hero-badge">
               <span className="hero-badge-dot" aria-hidden />
-              Beta waitlist now open
+              {LAUNCH_STATE === 'live' ? 'Now available on iOS' : 'Beta waitlist now open'}
             </div>
 
             <h1 className="hero-headline">
@@ -370,24 +370,49 @@ export default async function Home() {
             <p className="quote-text">
               Most apps give you a plan. VividCoach gives you a coach who actually knows your story.
             </p>
-            <p className="quote-attribution">— What our beta testers keep telling us</p>
+            <p className="quote-attribution">— What our {LAUNCH_STATE === 'live' ? 'users' : 'beta testers'} keep telling us</p>
           </div>
         </section>
 
         <div className="divider" />
 
-        {/* ── WAITLIST ──────────────────────────────────── */}
+        {/* ── WAITLIST / DOWNLOAD ───────────────────────── */}
         <section className="waitlist" id="waitlist">
-          <p className="section-label" data-reveal>Beta waitlist</p>
-          <h2 className="waitlist-title" data-reveal data-delay="1">
-            Get early access to VividCoach.
-          </h2>
-          <p className="waitlist-sub" data-reveal data-delay="2">
-            We&apos;re opening beta to a small group. Drop your email and
-            we&apos;ll reach out when your spot is ready.
-          </p>
-
-          <WaitlistForm initialCount={count} />
+          {LAUNCH_STATE === 'live' ? (
+            <>
+              <p className="section-label" data-reveal>Available now</p>
+              <h2 className="waitlist-title" data-reveal data-delay="1">
+                Start with VividCoach today.
+              </h2>
+              <p className="waitlist-sub" data-reveal data-delay="2">
+                Free to download. Your first session is on us.
+              </p>
+              <a
+                href="https://apps.apple.com/app/vividcoach/id6744742860"
+                className="hero-cta"
+                style={{ display: 'inline-flex', marginTop: '2rem' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download on the App Store
+                <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </>
+          ) : (
+            <>
+              <p className="section-label" data-reveal>Beta waitlist</p>
+              <h2 className="waitlist-title" data-reveal data-delay="1">
+                Get early access to VividCoach.
+              </h2>
+              <p className="waitlist-sub" data-reveal data-delay="2">
+                We&apos;re opening beta to a small group. Drop your email and
+                we&apos;ll reach out when your spot is ready.
+              </p>
+              <WaitlistForm initialCount={count} />
+            </>
+          )}
         </section>
 
         <div className="divider" />
