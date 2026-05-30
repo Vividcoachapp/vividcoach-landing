@@ -101,7 +101,18 @@ export default async function Home() {
       {/* ── NAV ─────────────────────────────────────────── */}
       <nav className="nav">
         <a href="/" className="nav-logo">VividCoach</a>
-        <a href="#waitlist" className="nav-cta">Join beta</a>
+        {LAUNCH_STATE === 'live' ? (
+          <a
+            href="https://apps.apple.com/app/vividcoach/id6744742860"
+            className="nav-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download free
+          </a>
+        ) : (
+          <a href="#waitlist" className="nav-cta">Join beta</a>
+        )}
       </nav>
 
       <main>
