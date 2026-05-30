@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter_Tight } from 'next/font/google'
 import './globals.css'
+import CursorGlow from './components/CursorGlow'
+import ScrollAnimations from './components/ScrollAnimations'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -61,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <CursorGlow />
+        <ScrollAnimations />
         {children}
       </body>
     </html>
