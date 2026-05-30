@@ -2202,6 +2202,8 @@ main, nav, footer, .stats-bar, .marquee-outer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* keep stat numbers visible — gradient-text is unreliable here */
+
 /* ─── FOOTER GLOW ─────────────────────────────────────── */
 .footer {
   background: linear-gradient(to top, rgba(0, 240, 228, 0.018) 0%, transparent 100%);
