@@ -308,6 +308,23 @@ export default async function Home() {
           </p>
         </section>
 
+        {/* ── INTERSTITIAL ──────────────────────────────── */}
+        <section className="interstitial">
+          <Image
+            src="/interstitial-sprint.png"
+            alt="Athlete in motion"
+            fill
+            className="interstitial-img"
+            sizes="100vw"
+          />
+          <div className="interstitial-text" data-reveal>
+            <span className="interstitial-label">Every workout. Every limitation.</span>
+            <h2 className="interstitial-headline">
+              Built for the body<br />you actually have.
+            </h2>
+          </div>
+        </section>
+
         <div className="divider" />
 
         {/* ── ANTI-POSITIONING ──────────────────────────── */}
