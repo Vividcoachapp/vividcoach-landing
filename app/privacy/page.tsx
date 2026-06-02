@@ -100,6 +100,12 @@ export default function PrivacyPage() {
                 Meal descriptions and weight readings you log may be summarized into prompts sent to the AI coach
                 (Anthropic's API) to provide contextual coaching responses.
               </p>
+              <p>
+                <strong>ElevenLabs, Inc.</strong> — When you enable voice coaching, the coach's text response is
+                transmitted to ElevenLabs' API for text-to-speech conversion. ElevenLabs processes this data as a
+                service provider and does not use it for their own purposes. See the{' '}
+                <a href="https://elevenlabs.io/privacy" target="_blank" rel="noopener noreferrer">ElevenLabs Privacy Policy</a>.
+              </p>
             </section>
 
             <section className="legal-section">
@@ -118,6 +124,11 @@ export default function PrivacyPage() {
                     <td><strong>Anthropic PBC</strong></td>
                     <td>AI coaching API</td>
                     <td>Your coaching messages</td>
+                  </tr>
+                  <tr>
+                    <td><strong>ElevenLabs, Inc.</strong></td>
+                    <td>Text-to-speech: converts coach response text to natural audio</td>
+                    <td>Coach message text (generated AI output containing fitness coaching context)</td>
                   </tr>
                   <tr>
                     <td><strong>Supabase</strong></td>

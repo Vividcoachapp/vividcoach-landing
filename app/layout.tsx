@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter_Tight } from 'next/font/google'
 import './globals.css'
+import CursorGlow from './components/CursorGlow'
+import ScrollAnimations from './components/ScrollAnimations'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
     title: 'VividCoach — A coach who actually gets you.',
     description:
       'Bad knee. Post-pregnancy comeback. Gym anxiety. VividCoach knows about it from day one.',
+    images: ['/opengraph-image'],
   },
   other: {
     'theme-color': '#07090F',
@@ -60,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <CursorGlow />
+        <ScrollAnimations />
         {children}
       </body>
     </html>
