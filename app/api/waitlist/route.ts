@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: 'VividCoach Waitlist <waitlist@vivid-coach.com>',
-        to: 'vividcoachceo@proton.me',
+        to: ['vividcoachceo@proton.me', 'chriscoy2@gmail.com'],
         subject: `New beta signup: ${email}`,
         text: `${email} just joined the VividCoach beta waitlist.\n\nTotal on waitlist: ${countData ?? 1}`,
       }),

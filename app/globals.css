@@ -81,6 +81,9 @@ body {
   border: none;
   border-radius: 8px;
   padding: 0.5rem 1.125rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -941,7 +944,7 @@ body {
 .waitlist-sub {
   font-size: 0.9375rem;
   color: var(--text-dim);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
   line-height: 1.7;
 }
 
@@ -1004,6 +1007,7 @@ body {
   border: none;
   border-radius: 12px;
   padding: 0.9rem 1.5rem;
+  min-height: 44px;
   cursor: pointer;
   white-space: nowrap;
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -1722,6 +1726,7 @@ body::after {
 .coach-row-photo {
   position: relative;
   aspect-ratio: 4 / 5;
+  max-height: 520px;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -1912,6 +1917,12 @@ main, nav, footer, .stats-bar, .marquee-outer {
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+@media (hover: hover) {
+  .marquee-outer:hover .marquee-inner {
+    animation-play-state: paused;
+  }
 }
 
 /* ─── SCROLL REVEAL ───────────────────────────────────── */
@@ -2152,7 +2163,7 @@ main, nav, footer, .stats-bar, .marquee-outer {
   object-fit: cover;
   object-position: center 30%;
   transform: scale(1.05);
-  transition: transform 8s ease;
+  transition: transform 4s ease;
 }
 
 .interstitial:hover .interstitial-img {
@@ -2187,6 +2198,7 @@ main, nav, footer, .stats-bar, .marquee-outer {
   color: var(--cyan);
   margin-bottom: 1rem;
   display: block;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 }
 
 .interstitial-headline {
@@ -2329,6 +2341,15 @@ main, nav, footer, .stats-bar, .marquee-outer {
     animation-timeline: view();
     animation-range: entry 0% entry 30%;
   }
+
+  /* Suppress JS-driven data-reveal opacity/transform transitions for elements
+     already controlled by scroll-driven animations above — prevents double-animate
+     and ensures hover transitions (border, shadow) still work. */
+  .story-card[data-reveal],
+  .coach-row[data-reveal],
+  .not-item[data-reveal] {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
 }
 
 /* ─── FEATURES SECTION ────────────────────────────────── */
@@ -2427,7 +2448,6 @@ main, nav, footer, .stats-bar, .marquee-outer {
   border-color: rgba(0, 240, 228, 0.3);
   transform: translateY(-8px) scale(1.01);
   background: rgba(0, 240, 228, 0.05);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 240, 228, 0.08);
   box-shadow:
     0 24px 72px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(0, 240, 228, 0.08),
@@ -2466,6 +2486,38 @@ main, nav, footer, .stats-bar, .marquee-outer {
   font-size: 0.875rem;
   color: var(--text-dim);
   line-height: 1.7;
+}
+
+/* ─── FOCUS RINGS (accessibility) ─────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.nav-cta:focus-visible,
+.waitlist-submit:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.hero-cta:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 6px;
+  border-radius: 14px;
+}
+
+.footer-link:focus-visible,
+.support-link:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Input already uses border + box-shadow as focus indicator */
+.waitlist-input:focus-visible {
+  outline: none;
 }
 
 /* ─── REDUCE MOTION ───────────────────────────────────── */

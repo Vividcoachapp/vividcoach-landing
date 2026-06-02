@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const SEQUENCE = [
   { delay: 900, type: 'coach' as const, text: "I see you've got a bad knee. Let's build your plan around it." },
@@ -8,26 +8,47 @@ const SEQUENCE = [
   { delay: 4000, type: 'coach' as const, text: "Today: zero-impact mobility + upper body. 24 min. Ready?" },
 ]
 
+const LAST_DELAY = Math.max(...SEQUENCE.map(m => m.delay))
+const LOOP_PAUSE = 3200
+
 export default function HeroMockup() {
   const [shown, setShown] = useState<number[]>([])
   const [typing, setTyping] = useState(false)
+  const [loopCount, setLoopCount] = useState(0)
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([])
 
   useEffect(() => {
-    const timers: ReturnType<typeof setTimeout>[] = []
+    function clearAll() {
+      timersRef.current.forEach(clearTimeout)
+      timersRef.current = []
+    }
 
-    SEQUENCE.forEach((msg, i) => {
-      if (msg.type === 'coach') {
-        timers.push(setTimeout(() => setTyping(true), msg.delay - 700))
-      }
-      timers.push(
-        setTimeout(() => {
-          setTyping(false)
-          setShown(prev => [...prev, i])
-        }, msg.delay)
-      )
-    })
+    function runSequence() {
+      clearAll()
+      setShown([])
+      setTyping(false)
+      setLoopCount(c => c + 1)
 
-    return () => timers.forEach(clearTimeout)
+      const timers: ReturnType<typeof setTimeout>[] = []
+
+      SEQUENCE.forEach((msg, i) => {
+        if (msg.type === 'coach') {
+          timers.push(setTimeout(() => setTyping(true), msg.delay - 700))
+        }
+        timers.push(
+          setTimeout(() => {
+            setTyping(false)
+            setShown(prev => [...prev, i])
+          }, msg.delay)
+        )
+      })
+
+      timers.push(setTimeout(runSequence, LAST_DELAY + LOOP_PAUSE))
+      timersRef.current = timers
+    }
+
+    runSequence()
+    return clearAll
   }, [])
 
   return (
@@ -79,7 +100,7 @@ export default function HeroMockup() {
         </div>
         <div className="hmk-metric-sep" />
         <div className="hmk-metric">
-          <svg className="hmk-ring-svg" viewBox="0 0 40 40" aria-hidden>
+          <svg key={loopCount} className="hmk-ring-svg" viewBox="0 0 40 40" aria-hidden>
             <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="3.5" />
             <circle
               className="hmk-ring-arc"

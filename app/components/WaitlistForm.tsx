@@ -58,10 +58,12 @@ export default function WaitlistForm({ initialCount }: WaitlistFormProps) {
 
   return (
     <>
-      <div className="waitlist-counter">
-        <span className="waitlist-counter-number">{count.toLocaleString()}</span>
-        <span>people already on the list</span>
-      </div>
+      {count > 0 && (
+        <div className="waitlist-counter">
+          <span className="waitlist-counter-number">{count.toLocaleString()}</span>
+          <span>people already on the list</span>
+        </div>
+      )}
 
       <form className="waitlist-form" onSubmit={handleSubmit} noValidate>
         <input

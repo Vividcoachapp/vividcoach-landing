@@ -279,7 +279,7 @@ export default async function Home() {
           <div className="coaches-header" data-reveal>
             <p className="section-label">Meet your coaches</p>
             <h2 className="coaches-title">
-              Real coaches. Real <em>connection.</em>
+              AI coaches. Real <em>connection.</em>
             </h2>
             <p className="coaches-sub">
               Every VividCoach coach is matched to your specific situation — not
@@ -305,7 +305,7 @@ export default async function Home() {
                   />
                   <div className="coach-photo-overlay" aria-hidden />
                 </div>
-                <div className="coach-row-content" data-ghost={coach.name}>
+                <div className="coach-row-content">
                   <div className="coach-specialty">{coach.specialty}</div>
                   <div className="coach-name">{coach.name}</div>
                   <blockquote className="coach-quote">
@@ -389,6 +389,27 @@ export default async function Home() {
               <span className="pricing-yearly">$99<span className="pricing-period">/year</span></span>
             </div>
             <p className="pricing-note">No upsells. Cancel anytime.</p>
+            {LAUNCH_STATE === 'live' ? (
+              <a
+                href="https://apps.apple.com/app/vividcoach/id6744742860"
+                className="hero-cta"
+                style={{ marginTop: '0.75rem' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download free
+                <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            ) : (
+              <a href="#waitlist" className="hero-cta" style={{ marginTop: '0.75rem' }}>
+                Join the beta waitlist
+                <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            )}
           </div>
         </section>
 
