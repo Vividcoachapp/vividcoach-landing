@@ -15,6 +15,9 @@ export default function TermsPage() {
 
       <main className="legal-main">
         <div className="legal-container">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
+            <img src="/icon.png" alt="VividCoach" width={64} height={64} style={{ borderRadius: '14px' }} />
+          </div>
           <p className="section-label">Legal</p>
           <h1 className="legal-title">Terms of Service</h1>
           <p className="legal-updated">Effective May 19, 2026 · Last Updated May 19, 2026</p>
