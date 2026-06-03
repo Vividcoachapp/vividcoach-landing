@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter_Tight } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import CursorGlow from './components/CursorGlow'
 import ScrollAnimations from './components/ScrollAnimations'
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CursorGlow />
         <ScrollAnimations />
         {children}
+        <Analytics />
       </body>
     </html>
   )
