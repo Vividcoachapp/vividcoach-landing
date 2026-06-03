@@ -3,6 +3,11 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+function safeText(v: unknown): string | undefined {
+  if (typeof v === 'string' && v.trim()) return v.trim().slice(0, 200)
+  return undefined
+}
+
 export async function POST(req: NextRequest) {
   let body: unknown
   try {
@@ -19,11 +24,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Email is required.' }, { status: 400 })
   }
 
-  const email = ((body as Record<string, unknown>).email as string).trim().toLowerCase()
+  const raw = body as Record<string, unknown>
+  const email = (raw.email as string).trim().toLowerCase()
 
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
   }
+
+  const utm_source   = safeText(raw.utm_source)
+  const utm_medium   = safeText(raw.utm_medium)
+  const utm_campaign = safeText(raw.utm_campaign)
+  const utm_content  = safeText(raw.utm_content)
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -32,7 +43,7 @@ export async function POST(req: NextRequest) {
 
   const { error: insertError } = await supabase
     .from('waitlist')
-    .insert({ email })
+    .insert({ email, utm_source, utm_medium, utm_campaign, utm_content })
 
   if (insertError) {
     if (insertError.code === '23505') {

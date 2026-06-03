@@ -1,9 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { track } from '@vercel/analytics/react'
 
 interface WaitlistFormProps {
   initialCount: number
+}
+
+interface UtmParams {
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+  utm_content?: string
 }
 
 export default function WaitlistForm({ initialCount }: WaitlistFormProps) {
@@ -11,6 +19,17 @@ export default function WaitlistForm({ initialCount }: WaitlistFormProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
   const [count, setCount] = useState(initialCount)
+  const utmRef = useRef<UtmParams>({})
+
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search)
+    const utm: UtmParams = {}
+    if (p.get('utm_source')) utm.utm_source = p.get('utm_source')!
+    if (p.get('utm_medium')) utm.utm_medium = p.get('utm_medium')!
+    if (p.get('utm_campaign')) utm.utm_campaign = p.get('utm_campaign')!
+    if (p.get('utm_content')) utm.utm_content = p.get('utm_content')!
+    utmRef.current = utm
+  }, [])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -18,12 +37,13 @@ export default function WaitlistForm({ initialCount }: WaitlistFormProps) {
 
     setStatus('loading')
     setErrorMsg('')
+    track('waitlist_form_submitted')
 
     try {
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+        body: JSON.stringify({ email: email.trim().toLowerCase(), ...utmRef.current }),
       })
 
       const data = await res.json()
@@ -31,14 +51,17 @@ export default function WaitlistForm({ initialCount }: WaitlistFormProps) {
       if (!res.ok) {
         setErrorMsg(data.error || 'Something went wrong. Please try again.')
         setStatus('error')
+        track('waitlist_signup_error', { error: data.error ?? 'unknown' })
         return
       }
 
       setCount(data.count)
       setStatus('success')
+      track('waitlist_signup_success', { count: data.count })
     } catch {
       setErrorMsg('Network error. Please try again.')
       setStatus('error')
+      track('waitlist_signup_error', { error: 'network_error' })
     }
   }
 
@@ -58,10 +81,14 @@ export default function WaitlistForm({ initialCount }: WaitlistFormProps) {
 
   return (
     <>
-      {count > 0 && (
+      {count >= 50 ? (
         <div className="waitlist-counter">
           <span className="waitlist-counter-number">{count.toLocaleString()}</span>
           <span>people already on the list</span>
+        </div>
+      ) : (
+        <div className="waitlist-counter">
+          <span>Beta opens to a limited group — spots are limited.</span>
         </div>
       )}
 

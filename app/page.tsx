@@ -6,6 +6,7 @@ import AnimatedCounter from './components/AnimatedCounter'
 import ParticleField from './components/ParticleField'
 import Marquee from './components/Marquee'
 import HeroVideo from './components/HeroVideo'
+import TrackedLink from './components/TrackedLink'
 
 async function getWaitlistCount(): Promise<number> {
   try {
@@ -111,7 +112,7 @@ export default async function Home() {
             Download free
           </a>
         ) : (
-          <a href="#waitlist" className="nav-cta">Join beta</a>
+          <TrackedLink href="#waitlist" className="nav-cta" eventName="waitlist_cta_clicked" eventProps={{ location: 'nav' }}>Join beta</TrackedLink>
         )}
       </nav>
 
@@ -156,12 +157,12 @@ export default async function Home() {
                 </svg>
               </a>
             ) : (
-              <a href="#waitlist" className="hero-cta">
+              <TrackedLink href="#waitlist" className="hero-cta" eventName="waitlist_cta_clicked" eventProps={{ location: 'hero' }}>
                 Join the beta waitlist
                 <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </TrackedLink>
             )}
 
             <p className="hero-campaign">
@@ -403,12 +404,12 @@ export default async function Home() {
                 </svg>
               </a>
             ) : (
-              <a href="#waitlist" className="hero-cta" style={{ marginTop: '0.75rem' }}>
+              <TrackedLink href="#waitlist" className="hero-cta" style={{ marginTop: '0.75rem' }} eventName="waitlist_cta_clicked" eventProps={{ location: 'pricing' }}>
                 Join the beta waitlist
                 <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </TrackedLink>
             )}
           </div>
         </section>
