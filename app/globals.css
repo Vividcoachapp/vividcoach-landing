@@ -2636,7 +2636,7 @@ main, nav, footer, .stats-bar, .marquee-outer {
 
 /* Use Higgsfield cinematic image as hero background */
 .hero--cinematic .hero-bg {
-  background-image: image-set(url('/hero-bg-cinematic.png') type('image/png'));
+  background-image: image-set(url('/hero-bg-cinematic.webp') type('image/webp'), url('/hero-bg-cinematic.png') type('image/png'));
   background-position: center 38%;
   opacity: 0.62;
 }
@@ -2778,7 +2778,7 @@ main, nav, footer, .stats-bar, .marquee-outer {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/story-bg-gym.png');
+  background-image: image-set(url('/story-bg-gym.webp') type('image/webp'), url('/story-bg-gym.png') type('image/png'));
   background-size: cover;
   background-position: center;
   opacity: 0.04;
