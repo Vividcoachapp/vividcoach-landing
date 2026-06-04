@@ -2614,3 +2614,534 @@ main, nav, footer, .stats-bar, .marquee-outer {
     padding: 4rem 0;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   PREMIUM EDITORIAL OVERHAUL — Phase III
+   Reference: godaylight.com · wolverineworldwide.com
+   ══════════════════════════════════════════════════════════ */
+
+/* ─── HERO: FULL-WIDTH CINEMATIC ──────────────────────── */
+
+/* Override: remove the two-column desktop split */
+.hero--cinematic {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column !important;
+  min-height: 100svh;
+  max-width: none;
+  margin: 0;
+  padding: 8rem 1.5rem 5rem;
+}
+
+/* Use Higgsfield cinematic image as hero background */
+.hero--cinematic .hero-bg {
+  background-image: image-set(url('/hero-bg-cinematic.png') type('image/png'));
+  background-position: center 38%;
+  opacity: 0.62;
+}
+
+.hero--cinematic .hero-video {
+  opacity: 0.28;
+}
+
+/* Override hero-content to stay centered at all breakpoints */
+.hero-content--centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center;
+  max-width: 74rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Massive display headline */
+.hero-headline--xl {
+  font-size: clamp(3.75rem, 11vw, 9.5rem) !important;
+  max-width: 14ch;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 0.96 !important;
+}
+
+/* Sub centered with line breaks */
+.hero-sub--centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(1rem, 2.2vw, 1.25rem) !important;
+  max-width: 50ch;
+  margin-bottom: 2.75rem;
+}
+
+.hero-br {
+  display: none;
+}
+
+@media (min-width: 680px) {
+  .hero-br {
+    display: inline;
+  }
+}
+
+/* ─── PHILOSOPHY SECTION ──────────────────────────────── */
+.philosophy {
+  padding: 9rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.philosophy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 240, 228, 0.055) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(212, 255, 62, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.philosophy-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.philosophy-label {
+  margin-bottom: 2rem;
+}
+
+.philosophy-headline {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: clamp(2.25rem, 5.5vw, 4.75rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  max-width: 26ch;
+  margin: 0 auto 2rem;
+}
+
+.philosophy-headline em {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--chartreuse) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.philosophy-closer {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--chartreuse);
+  letter-spacing: -0.02em;
+}
+
+/* ─── STORY: EDITORIAL PANELS ─────────────────────────── */
+
+/* Reset the old story section max-width for panels */
+.story {
+  max-width: none !important;
+  padding: 0 !important;
+  overflow: visible;
+}
+
+.story::before {
+  display: none;
+}
+
+.story-intro {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.story-intro .section-label {
+  margin-bottom: 0;
+}
+
+.story-panels {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.story-panels::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/story-bg-gym.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.story-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.story-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 4rem 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  min-height: 36vh;
+  gap: 2rem;
+}
+
+.story-panel:nth-child(even) {
+  background: rgba(255, 255, 255, 0.013);
+}
+
+@media (min-width: 768px) {
+  .story-panel {
+    grid-template-columns: 38% 1fr;
+    padding: 7rem 6vw;
+    gap: 6rem;
+    min-height: 52vh;
+    align-items: center;
+  }
+}
+
+.story-panel-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.story-panel-number {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: clamp(5rem, 14vw, 13rem);
+  font-weight: 900;
+  color: rgba(212, 255, 62, 0.07);
+  line-height: 1;
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+}
+
+.story-panel-problem {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: clamp(2.75rem, 6.5vw, 6rem);
+  font-weight: 900;
+  color: var(--chartreuse);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(3.5rem, 8vw, 7rem);
+}
+
+.story-panel-right {
+  display: flex;
+  align-items: center;
+}
+
+.story-panel-body {
+  font-size: clamp(1.0625rem, 1.8vw, 1.3125rem);
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 52ch;
+}
+
+/* Scroll-reveal on panels */
+@supports (animation-timeline: scroll()) {
+  .story-panel {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+
+  .story-panel[data-reveal] {
+    transition: none;
+  }
+}
+
+/* ─── MANIFESTO SECTION (replaces not-section grid) ──── */
+.manifesto {
+  padding: 7rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto::before {
+  content: '';
+  position: absolute;
+  inset: -80px 0;
+  background:
+    radial-gradient(ellipse 55% 50% at 15% 60%, rgba(255, 75, 75, 0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 45% at 85% 35%, rgba(0, 240, 228, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.manifesto-inner {
+  max-width: 82rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 900px) {
+  .manifesto-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    align-items: start;
+  }
+}
+
+.manifesto-label {
+  color: var(--coral);
+}
+
+.manifesto-headline {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  max-width: 20ch;
+  margin: 1rem 0 1.75rem;
+}
+
+.manifesto-headline em {
+  color: var(--coral);
+  font-style: italic;
+}
+
+.manifesto-body {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 44ch;
+}
+
+.manifesto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.manifesto-item {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1.25rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--card-border);
+  align-items: start;
+  transition: background 0.25s ease;
+}
+
+.manifesto-item:first-child {
+  border-top: 1px solid var(--card-border);
+}
+
+.manifesto-item:hover {
+  background: rgba(255, 75, 75, 0.025);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.manifesto-marker {
+  font-family: var(--font-fraunces, serif);
+  font-style: italic;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--coral);
+  opacity: 0.7;
+  margin-top: 0.2rem;
+  letter-spacing: 0.04em;
+}
+
+.manifesto-item-text strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.005em;
+}
+
+.manifesto-item-text p {
+  font-size: 0.9375rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ─── INTERSTITIAL: TALL CINEMATIC ────────────────────── */
+.interstitial--tall {
+  height: clamp(55vh, 75vw, 90vh) !important;
+}
+
+/* Parallax on interstitial image */
+.interstitial--tall .interstitial-img {
+  animation: parallaxScroll linear both;
+  animation-timeline: view();
+  animation-range: cover 0% cover 100%;
+  height: 120% !important;
+  top: -10% !important;
+  will-change: transform;
+}
+
+@keyframes parallaxScroll {
+  from { transform: translateY(-8%); }
+  to   { transform: translateY(8%); }
+}
+
+/* Bigger interstitial headline */
+.interstitial--tall .interstitial-headline {
+  font-size: clamp(3rem, 8vw, 6.5rem) !important;
+}
+
+/* ─── PARALLAX IMAGE SYSTEM ───────────────────────────── */
+.parallax-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+@supports (animation-timeline: scroll()) {
+  .parallax-img {
+    will-change: transform;
+    animation: parallaxRise linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+
+  @keyframes parallaxRise {
+    from { transform: scale(1.1) translateY(5%); }
+    to   { transform: scale(1.1) translateY(-5%); }
+  }
+
+  /* Don't double-animate the interstitial (it has its own) */
+  .interstitial--tall .interstitial-img {
+    animation: parallaxScroll linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+
+  /* Suppress hover scale on coach when parallax is active */
+  .coach-row:hover .parallax-img {
+    transform: scale(1.1) translateY(-5%);
+  }
+}
+
+/* ─── ENHANCED COACH ROWS ─────────────────────────────── */
+
+/* Larger photos */
+@media (min-width: 768px) {
+  .coach-row {
+    grid-template-columns: 48% 1fr !important;
+  }
+}
+
+.coach-row-photo {
+  aspect-ratio: 3 / 4 !important;
+  max-height: none !important;
+  border-radius: 0 !important;
+}
+
+.coach-row-photo::after {
+  border-radius: 0 !important;
+}
+
+/* Bigger name */
+.coach-row-content .coach-name {
+  font-size: clamp(2.5rem, 5.5vw, 4rem) !important;
+}
+
+/* Bigger quote */
+.coach-row-content .coach-quote {
+  font-size: 1.0625rem !important;
+  line-height: 1.8 !important;
+  border-left-color: rgba(0, 240, 228, 0.25);
+  padding-left: 1.5rem;
+}
+
+/* ─── HERO: STRONGER BG VIDEO ─────────────────────────── */
+@media (min-width: 768px) {
+  .hero--cinematic {
+    padding: 9rem 2rem 6rem;
+  }
+}
+
+/* ─── SECTION LABEL IN PHILOSOPHY ────────────────────── */
+.philosophy .section-label {
+  margin-bottom: 1.5rem;
+}
+
+/* ─── SCROLL-DRIVEN: PHILOSOPHY ───────────────────────── */
+@supports (animation-timeline: scroll()) {
+  .philosophy-inner {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+  }
+  .manifesto-inner {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 20%;
+  }
+}
+
+/* Suppress JS data-reveal on manifesto-item (scroll-driven handles section) */
+.manifesto-item[data-reveal] {
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s);
+}
+
+/* ─── TYPOGRAPHY: PUSH DISPLAY SIZES UP GLOBALLY ─────── */
+.features-title {
+  font-size: clamp(2.5rem, 5.5vw, 4rem) !important;
+}
+
+.coaches-title {
+  font-size: clamp(2.5rem, 5.5vw, 4rem) !important;
+}
+
+.pricing-title {
+  font-size: clamp(2.5rem, 5.5vw, 3.5rem) !important;
+}
+
+.quote-text {
+  font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+}
+
+/* ─── REDUCE MOTION: DISABLE NEW PARALLAX ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-img,
+  .interstitial--tall .interstitial-img {
+    animation: none !important;
+    transform: none !important;
+    height: 100% !important;
+    top: 0 !important;
+  }
+}
+

@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
 import WaitlistForm from './components/WaitlistForm'
-import HeroMockup from './components/HeroMockup'
 import AnimatedCounter from './components/AnimatedCounter'
 import ParticleField from './components/ParticleField'
 import Marquee from './components/Marquee'
@@ -118,7 +117,7 @@ export default async function Home() {
 
       <main>
         {/* ── HERO ──────────────────────────────────────── */}
-        <section className="hero">
+        <section className="hero hero--cinematic">
           <div className="hero-bg" aria-hidden />
           <HeroVideo />
           <div className="hero-glow" aria-hidden />
@@ -128,20 +127,19 @@ export default async function Home() {
           <div className="hero-orb-3" aria-hidden />
           <ParticleField />
 
-          {/* Left column: copy */}
-          <div className="hero-content">
+          <div className="hero-content hero-content--centered">
             <div className="hero-badge">
               <span className="hero-badge-dot" aria-hidden />
               {LAUNCH_STATE === 'live' ? 'Now available on iOS' : 'Beta waitlist now open'}
             </div>
 
-            <h1 className="hero-headline">
-              A coach who actually <em>gets you.</em>
+            <h1 className="hero-headline hero-headline--xl">
+              A coach who<br />actually <em>gets&nbsp;you.</em>
             </h1>
 
-            <p className="hero-sub">
-              Bad knee. Post-pregnancy comeback. Gym anxiety. VividCoach knows
-              about it from day one.
+            <p className="hero-sub hero-sub--centered">
+              Bad knee. Post-pregnancy comeback. Gym anxiety.<br className="hero-br" />
+              VividCoach knows about it from day&nbsp;one.
             </p>
 
             {LAUNCH_STATE === 'live' ? (
@@ -168,11 +166,6 @@ export default async function Home() {
             <p className="hero-campaign">
               Your last fitness app didn&rsquo;t get you. VividCoach does.
             </p>
-          </div>
-
-          {/* Right column: animated app mockup (desktop only) */}
-          <div className="hero-visual" aria-hidden>
-            <HeroMockup />
           </div>
 
           <div className="hero-scroll-hint" aria-hidden>
@@ -206,6 +199,18 @@ export default async function Home() {
           </div>
         </div>
 
+        {/* ── PHILOSOPHY ────────────────────────────────── */}
+        <section className="philosophy" aria-label="Our philosophy">
+          <div className="philosophy-inner" data-reveal>
+            <p className="section-label philosophy-label">The VividCoach belief</p>
+            <h2 className="philosophy-headline">
+              The gap between your limitations and your potential
+              {' '}<em>isn&rsquo;t willpower.</em>
+            </h2>
+            <p className="philosophy-closer">It&rsquo;s the right coach.</p>
+          </div>
+        </section>
+
         {/* ── FEATURES ──────────────────────────────────── */}
         <section className="features" id="features">
           <div className="features-inner">
@@ -229,46 +234,47 @@ export default async function Home() {
 
         <div className="divider" />
 
-        {/* ── BRAND STORY ───────────────────────────────── */}
-        <section className="story" id="story">
-          <div className="story-header" data-reveal>
+        {/* ── BRAND STORY ── Editorial Panels ───────────── */}
+        <section className="story" id="story" aria-label="Built for real bodies">
+          <div className="story-intro" data-reveal>
             <p className="section-label">Built for real bodies</p>
-            <h2 className="story-title">
-              Coaching that meets the body you actually have.
-            </h2>
           </div>
 
-          <div className="story-grid">
-            <div className="story-card" data-reveal data-delay="1">
-              <div className="story-card-accent" aria-hidden />
-              <span className="story-card-number" aria-hidden>01</span>
-              <div className="story-card-problem">Bad knee.</div>
-              <p className="story-card-body">
-                Not &quot;just avoid squats.&quot; VividCoach knows your knee, builds around
-                it, and adapts every session so you can still move forward.
-              </p>
+          <div className="story-panels">
+            <div className="story-panel" data-reveal>
+              <div className="story-panel-left">
+                <span className="story-panel-number" aria-hidden>01</span>
+                <div className="story-panel-problem">Bad knee.</div>
+              </div>
+              <div className="story-panel-right">
+                <p className="story-panel-body">
+                  Not &ldquo;just avoid squats.&rdquo; VividCoach knows your knee — builds every session around it, adapts every week as you get stronger. No modification is an afterthought. You keep moving forward. Always.
+                </p>
+              </div>
             </div>
 
-            <div className="story-card" data-reveal data-delay="2">
-              <div className="story-card-accent" aria-hidden />
-              <span className="story-card-number" aria-hidden>02</span>
-              <div className="story-card-problem">Post-pregnancy comeback.</div>
-              <p className="story-card-body">
-                Your body changed. Your old routine doesn&apos;t fit anymore.
-                VividCoach starts from where you actually are — not where you used
-                to be.
-              </p>
+            <div className="story-panel" data-reveal data-delay="1">
+              <div className="story-panel-left">
+                <span className="story-panel-number" aria-hidden>02</span>
+                <div className="story-panel-problem">Post-pregnancy comeback.</div>
+              </div>
+              <div className="story-panel-right">
+                <p className="story-panel-body">
+                  Your body changed. Your old routine doesn&rsquo;t fit anymore. VividCoach starts from where you actually are — not where you used to be — and builds a path that respects every limit while still pushing you forward.
+                </p>
+              </div>
             </div>
 
-            <div className="story-card" data-reveal data-delay="3">
-              <div className="story-card-accent" aria-hidden />
-              <span className="story-card-number" aria-hidden>03</span>
-              <div className="story-card-problem">Gym anxiety.</div>
-              <p className="story-card-body">
-                Walking in without a plan is hard. Your coach helps you show up
-                with one every single time — so you can focus on moving, not
-                figuring it out.
-              </p>
+            <div className="story-panel" data-reveal data-delay="2">
+              <div className="story-panel-left">
+                <span className="story-panel-number" aria-hidden>03</span>
+                <div className="story-panel-problem">Gym anxiety.</div>
+              </div>
+              <div className="story-panel-right">
+                <p className="story-panel-body">
+                  Walking in without a plan is the hardest part. Your coach gives you one — every session, structured so you feel in control before you arrive. Walk in knowing exactly what you&rsquo;re doing. Focus on moving, not figuring it out.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -296,13 +302,13 @@ export default async function Home() {
                 data-reveal
                 data-delay={String(i + 1)}
               >
-                <div className="coach-row-photo">
+                <div className="coach-row-photo parallax-wrap">
                   <Image
                     src={coach.image}
                     alt={`${coach.name} — VividCoach ${coach.specialty} coach`}
                     fill
-                    sizes="(max-width: 768px) 90vw, 45vw"
-                    className="coach-photo"
+                    sizes="(max-width: 768px) 90vw, 48vw"
+                    className="coach-photo parallax-img"
                   />
                   <div className="coach-photo-overlay" aria-hidden />
                 </div>
@@ -323,13 +329,14 @@ export default async function Home() {
         </section>
 
         {/* ── INTERSTITIAL ──────────────────────────────── */}
-        <section className="interstitial">
+        <section className="interstitial interstitial--tall">
           <Image
-            src="/interstitial-sprint.png"
+            src="/interstitial-cinematic.png"
             alt="Athlete in motion"
             fill
             className="interstitial-img"
             sizes="100vw"
+            priority={false}
           />
           <div className="interstitial-text" data-reveal>
             <span className="interstitial-label">Every workout. Every limitation.</span>
@@ -341,40 +348,49 @@ export default async function Home() {
 
         <div className="divider" />
 
-        {/* ── ANTI-POSITIONING ──────────────────────────── */}
-        <section className="not-section" id="not">
-          <div className="not-header" data-reveal>
-            <p className="section-label not-label">What VividCoach is not</p>
-            <h2 className="not-title">
-              Not another app that forgets <em>you exist.</em>
-            </h2>
+        {/* ── MANIFESTO (replaces not-section) ──────────── */}
+        <section className="manifesto" id="not">
+          <div className="manifesto-inner">
+            <div className="manifesto-col" data-reveal>
+              <p className="section-label manifesto-label">What VividCoach is not</p>
+              <h2 className="manifesto-headline">
+                Not another app that forgets <em>you&nbsp;exist.</em>
+              </h2>
+              <p className="manifesto-body">
+                There&rsquo;s no shortage of fitness apps. There&rsquo;s a massive shortage of coaching that actually knows you — your body, your history, your real life.
+              </p>
+            </div>
+            <ul className="manifesto-list" aria-label="What VividCoach is not">
+              <li className="manifesto-item" data-reveal data-delay="1">
+                <span className="manifesto-marker" aria-hidden>01</span>
+                <div className="manifesto-item-text">
+                  <strong>Not a generic plan generator.</strong>
+                  <p>Every session is shaped by what your coach knows about your body, history, and goals — not an algorithm guessing from a template.</p>
+                </div>
+              </li>
+              <li className="manifesto-item" data-reveal data-delay="2">
+                <span className="manifesto-marker" aria-hidden>02</span>
+                <div className="manifesto-item-text">
+                  <strong>Not a library of videos.</strong>
+                  <p>You don&rsquo;t need more content to scroll. You need a coach who tells you exactly what to do today.</p>
+                </div>
+              </li>
+              <li className="manifesto-item" data-reveal data-delay="3">
+                <span className="manifesto-marker" aria-hidden>03</span>
+                <div className="manifesto-item-text">
+                  <strong>Not built for the already-fit.</strong>
+                  <p>VividCoach starts from where you actually are — injuries, limitations, life — and builds from there.</p>
+                </div>
+              </li>
+              <li className="manifesto-item" data-reveal data-delay="4">
+                <span className="manifesto-marker" aria-hidden>04</span>
+                <div className="manifesto-item-text">
+                  <strong>Not subscription bait.</strong>
+                  <p>One price. No upsells. Cancel anytime. The coach relationship is the product.</p>
+                </div>
+              </li>
+            </ul>
           </div>
-          <ul className="not-list">
-            <li className="not-item" data-reveal data-delay="1">
-              <span className="not-x" aria-hidden>✕</span>
-              <div>
-                <strong>Not a generic plan generator.</strong> Every session is shaped by what your coach knows about your body, history, and goals — not an algorithm guessing.
-              </div>
-            </li>
-            <li className="not-item" data-reveal data-delay="2">
-              <span className="not-x" aria-hidden>✕</span>
-              <div>
-                <strong>Not a library of videos.</strong> You don&rsquo;t need more content to scroll. You need a coach who tells you exactly what to do today.
-              </div>
-            </li>
-            <li className="not-item" data-reveal data-delay="3">
-              <span className="not-x" aria-hidden>✕</span>
-              <div>
-                <strong>Not built for the already-fit.</strong> VividCoach starts from where you actually are — injuries, limitations, life — and builds from there.
-              </div>
-            </li>
-            <li className="not-item" data-reveal data-delay="4">
-              <span className="not-x" aria-hidden>✕</span>
-              <div>
-                <strong>Not subscription bait.</strong> One price. No upsells. Cancel anytime. The coach relationship is the product.
-              </div>
-            </li>
-          </ul>
         </section>
 
         <div className="divider" />
