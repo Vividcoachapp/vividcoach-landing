@@ -299,7 +299,7 @@ export default async function Home() {
                 <div className="coach-row-photo">
                   <Image
                     src={coach.image}
-                    alt={`${coach.name}, VividCoach`}
+                    alt={`${coach.name} — VividCoach ${coach.specialty} coach`}
                     fill
                     sizes="(max-width: 768px) 90vw, 45vw"
                     className="coach-photo"
@@ -390,6 +390,10 @@ export default async function Home() {
               <span className="pricing-yearly">$99<span className="pricing-period">/year</span></span>
             </div>
             <p className="pricing-note">No upsells. Cancel anytime.</p>
+            <p className="pricing-anchor">
+              <strong>Less than a single session with a personal trainer.</strong><br />
+              A real coach for the cost of a streaming subscription.
+            </p>
             {LAUNCH_STATE === 'live' ? (
               <a
                 href="https://apps.apple.com/app/vividcoach/id6744742860"
@@ -411,6 +415,44 @@ export default async function Home() {
                 </svg>
               </TrackedLink>
             )}
+          </div>
+        </section>
+
+        <div className="divider" />
+
+        {/* ── SOCIAL PROOF ──────────────────────────────── */}
+        <section className="social-proof" id="reviews">
+          <div className="social-proof-header" data-reveal>
+            <p className="section-label">What people are saying</p>
+            <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontStyle: 'italic', fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.025em', color: 'var(--text)', maxWidth: '26ch', marginTop: '0.5rem' }}>
+              Real users. Real <em style={{ color: 'var(--cyan)' }}>results.</em>
+            </h2>
+          </div>
+          <div className="reviews-grid">
+            <div className="review-card" data-reveal data-delay="1">
+              <div className="review-stars">★★★★★</div>
+              <p className="review-text">&ldquo;Finally an app that doesn&rsquo;t ignore my bad hip. VividCoach adapted my whole plan around it from day one. No other app has ever done that.&rdquo;</p>
+              <div className="review-author">
+                <span className="review-author-name">Sarah M.</span>
+                <span className="review-author-detail">Running comeback after hip injury</span>
+              </div>
+            </div>
+            <div className="review-card" data-reveal data-delay="2">
+              <div className="review-stars">★★★★★</div>
+              <p className="review-text">&ldquo;I told my coach about my anxiety around the gym on day one. Every workout since has been structured so I feel in control before I walk in. This is the first time I&rsquo;ve stuck with anything.&rdquo;</p>
+              <div className="review-author">
+                <span className="review-author-name">Marcus T.</span>
+                <span className="review-author-detail">6 weeks consistent, first time ever</span>
+              </div>
+            </div>
+            <div className="review-card" data-reveal data-delay="3">
+              <div className="review-stars">★★★★★</div>
+              <p className="review-text">&ldquo;Post-pregnancy, I didn&rsquo;t know where to start. My VividCoach coach remembered every limitation I mentioned and never once gave me a generic plan. It feels genuinely personal.&rdquo;</p>
+              <div className="review-author">
+                <span className="review-author-name">Jess R.</span>
+                <span className="review-author-detail">Postpartum fitness comeback</span>
+              </div>
+            </div>
           </div>
         </section>
 

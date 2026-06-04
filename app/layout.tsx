@@ -21,8 +21,12 @@ const interTight = Inter_Tight({
 export const metadata: Metadata = {
   title: 'VividCoach — A coach who actually gets you.',
   description:
-    'Bad knee. Post-pregnancy comeback. Gym anxiety. VividCoach knows about it from day one. Join the beta waitlist.',
+    'Bad knee. Post-pregnancy comeback. Gym anxiety. VividCoach knows about it from day one. AI fitness coaching that adapts to your body, injuries, and life.',
   metadataBase: new URL('https://www.vivid-coach.com'),
+  alternates: {
+    canonical: 'https://www.vivid-coach.com',
+  },
+  keywords: ['AI fitness coach', 'personal trainer app', 'AI personal trainer', 'fitness coaching app', 'workout app', 'VividCoach', 'injury-aware fitness'],
   openGraph: {
     title: 'VividCoach — A coach who actually gets you.',
     description:
@@ -30,6 +34,12 @@ export const metadata: Metadata = {
     url: 'https://www.vivid-coach.com',
     siteName: 'VividCoach',
     type: 'website',
+    images: [{
+      url: '/opengraph-image',
+      width: 1200,
+      height: 630,
+      alt: 'VividCoach — AI personal coaching that knows your body',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -43,18 +53,34 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'VividCoach',
-  url: 'https://www.vivid-coach.com',
-  description: 'AI fitness coaching that adapts to your body, injuries, and life.',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: 'support@vivid-coach.com',
-    contactType: 'customer support',
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'VividCoach',
+    url: 'https://www.vivid-coach.com',
+    description: 'AI fitness coaching that adapts to your body, injuries, and life.',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'support@vivid-coach.com',
+      contactType: 'customer support',
+    },
   },
-}
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'VividCoach',
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'iOS',
+    description: 'AI personal coaching that adapts to your body, injuries, and limitations from day one. Choose from 30 coaches with distinct personalities.',
+    url: 'https://apps.apple.com/app/vividcoach/id6744742860',
+    offers: {
+      '@type': 'Offer',
+      price: '12.99',
+      priceCurrency: 'USD',
+    },
+  },
+]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
