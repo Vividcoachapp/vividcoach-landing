@@ -486,8 +486,8 @@ export default async function Home() {
             <p className="support-body">
               Have a feature idea or feedback for the beta? We&apos;d love to hear it.
             </p>
-            <a href="mailto:feedback@vivid-coach.com" className="support-link">
-              feedback@vivid-coach.com
+            <a href="mailto:support@vivid-coach.com" className="support-link">
+              support@vivid-coach.com
             </a>
           </div>
         </section>
