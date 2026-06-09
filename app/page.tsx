@@ -102,14 +102,7 @@ export default async function Home() {
       <nav className="nav">
         <a href="/" className="nav-logo">VividCoach</a>
         {LAUNCH_STATE === 'live' ? (
-          <a
-            href="https://apps.apple.com/app/vividcoach/id6744742860"
-            className="nav-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download free
-          </a>
+          <TrackedLink href="https://apps.apple.com/app/vividcoach/id6744742860" className="nav-cta" eventName="appstore_cta_clicked" eventProps={{ location: 'nav' }} target="_blank" rel="noopener noreferrer">Download free</TrackedLink>
         ) : (
           <TrackedLink href="#waitlist" className="nav-cta" eventName="waitlist_cta_clicked" eventProps={{ location: 'nav' }}>Join beta</TrackedLink>
         )}
@@ -143,17 +136,12 @@ export default async function Home() {
             </p>
 
             {LAUNCH_STATE === 'live' ? (
-              <a
-                href="https://apps.apple.com/app/vividcoach/id6744742860"
-                className="hero-cta"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <TrackedLink href="https://apps.apple.com/app/vividcoach/id6744742860" className="hero-cta" eventName="appstore_cta_clicked" eventProps={{ location: 'hero' }} target="_blank" rel="noopener noreferrer">
                 Download on the App Store
                 <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </TrackedLink>
             ) : (
               <TrackedLink href="#waitlist" className="hero-cta" eventName="waitlist_cta_clicked" eventProps={{ location: 'hero' }}>
                 Join the beta waitlist
@@ -411,18 +399,12 @@ export default async function Home() {
               A real coach for the cost of a streaming subscription.
             </p>
             {LAUNCH_STATE === 'live' ? (
-              <a
-                href="https://apps.apple.com/app/vividcoach/id6744742860"
-                className="hero-cta"
-                style={{ marginTop: '0.75rem' }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <TrackedLink href="https://apps.apple.com/app/vividcoach/id6744742860" className="hero-cta" style={{ marginTop: '0.75rem' }} eventName="appstore_cta_clicked" eventProps={{ location: 'pricing' }} target="_blank" rel="noopener noreferrer">
                 Download free
                 <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </TrackedLink>
             ) : (
               <TrackedLink href="#waitlist" className="hero-cta" style={{ marginTop: '0.75rem' }} eventName="waitlist_cta_clicked" eventProps={{ location: 'pricing' }}>
                 Join the beta waitlist
@@ -497,18 +479,12 @@ export default async function Home() {
               <p className="waitlist-sub" data-reveal data-delay="2">
                 Free to download. Your first session is on us.
               </p>
-              <a
-                href="https://apps.apple.com/app/vividcoach/id6744742860"
-                className="hero-cta"
-                style={{ display: 'inline-flex', marginTop: '2rem' }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <TrackedLink href="https://apps.apple.com/app/vividcoach/id6744742860" className="hero-cta" style={{ display: 'inline-flex', marginTop: '2rem' }} eventName="appstore_cta_clicked" eventProps={{ location: 'waitlist' }} target="_blank" rel="noopener noreferrer">
                 Download on the App Store
                 <svg className="hero-cta-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </TrackedLink>
             </>
           ) : (
             <>
