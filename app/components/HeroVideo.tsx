@@ -8,7 +8,8 @@ export default function HeroVideo() {
       loop
       muted
       playsInline
-      preload="auto"
+      preload="none"
+      poster="/hero-bg.webp"
       aria-hidden
     >
       <source src="/hero-bg.mp4" type="video/mp4" />
