@@ -6,6 +6,8 @@ import ParticleField from './components/ParticleField'
 import Marquee from './components/Marquee'
 import HeroVideo from './components/HeroVideo'
 import TrackedLink from './components/TrackedLink'
+import StickyMobileCTA from './components/StickyMobileCTA'
+import AndroidNotifyForm from './components/AndroidNotifyForm'
 
 async function getWaitlistCount(): Promise<number> {
   try {
@@ -391,7 +393,10 @@ export default async function Home() {
             <div className="pricing-amount">
               <span className="pricing-monthly">$12.99<span className="pricing-period">/month</span></span>
               <span className="pricing-or">or</span>
-              <span className="pricing-yearly">$99<span className="pricing-period">/year</span></span>
+              <div className="pricing-annual-group">
+                <span className="pricing-yearly">$99<span className="pricing-period">/year</span></span>
+                <span className="pricing-save-badge">Save $57 &middot; 2&nbsp;months free</span>
+              </div>
             </div>
             <p className="pricing-note">No upsells. Cancel anytime.</p>
             <p className="pricing-anchor">
@@ -418,39 +423,73 @@ export default async function Home() {
 
         <div className="divider" />
 
-        {/* ── SOCIAL PROOF ──────────────────────────────── */}
-        <section className="social-proof" id="reviews">
-          <div className="social-proof-header" data-reveal>
-            <p className="section-label">What people are saying</p>
-            <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontStyle: 'italic', fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.025em', color: 'var(--text)', maxWidth: '26ch', marginTop: '0.5rem' }}>
-              Real users. Real <em style={{ color: 'var(--cyan)' }}>results.</em>
-            </h2>
+        {/* ── HOW IT WORKS ──────────────────────────────── */}
+        <section className="how-it-works" id="how-it-works">
+          <div className="how-header" data-reveal>
+            <p className="section-label">How it works</p>
+            <h2 className="how-title">Your first week with VividCoach.</h2>
           </div>
-          <div className="reviews-grid">
-            <div className="review-card" data-reveal data-delay="1">
-              <div className="review-stars">★★★★★</div>
-              <p className="review-text">&ldquo;Finally an app that doesn&rsquo;t ignore my bad hip. VividCoach adapted my whole plan around it from day one. No other app has ever done that.&rdquo;</p>
-              <div className="review-author">
-                <span className="review-author-name">Sarah M.</span>
-                <span className="review-author-detail">Running comeback after hip injury</span>
-              </div>
+          <div className="how-steps">
+            <div className="how-step" data-reveal data-delay="1">
+              <span className="how-step-num" aria-hidden>01</span>
+              <h3 className="how-step-title">Tell your coach everything.</h3>
+              <p className="how-step-body">Bad knee. Post-pregnancy. Gym anxiety. Travel schedule. Sleep issues. Your coach absorbs it all on day one — and never forgets it.</p>
             </div>
-            <div className="review-card" data-reveal data-delay="2">
-              <div className="review-stars">★★★★★</div>
-              <p className="review-text">&ldquo;I told my coach about my anxiety around the gym on day one. Every workout since has been structured so I feel in control before I walk in. This is the first time I&rsquo;ve stuck with anything.&rdquo;</p>
-              <div className="review-author">
-                <span className="review-author-name">Marcus T.</span>
-                <span className="review-author-detail">6 weeks consistent, first time ever</span>
-              </div>
+            <div className="how-step" data-reveal data-delay="2">
+              <span className="how-step-num" aria-hidden>02</span>
+              <h3 className="how-step-title">Get your first plan — built for your body.</h3>
+              <p className="how-step-body">Not a template. Not a generic program. A session designed around your actual limitations and goals, from the very first workout.</p>
             </div>
-            <div className="review-card" data-reveal data-delay="3">
-              <div className="review-stars">★★★★★</div>
-              <p className="review-text">&ldquo;Post-pregnancy, I didn&rsquo;t know where to start. My VividCoach coach remembered every limitation I mentioned and never once gave me a generic plan. It feels genuinely personal.&rdquo;</p>
-              <div className="review-author">
-                <span className="review-author-name">Jess R.</span>
-                <span className="review-author-detail">Postpartum fitness comeback</span>
-              </div>
+            <div className="how-step" data-reveal data-delay="3">
+              <span className="how-step-num" aria-hidden>03</span>
+              <h3 className="how-step-title">Check in. Your plan evolves.</h3>
+              <p className="how-step-body">After every session, your coach adjusts. Traveled this week? Sore from Tuesday? Flared up? It factors that in. The plan gets smarter as you go.</p>
             </div>
+          </div>
+        </section>
+
+        <div className="divider" />
+
+        {/* ── FAQ ───────────────────────────────────────── */}
+        <section className="faq" id="faq">
+          <div className="faq-inner">
+            <div className="faq-header" data-reveal>
+              <p className="section-label">Questions</p>
+              <h2 className="faq-title">What people ask before they start.</h2>
+            </div>
+            <dl className="faq-list">
+              {[
+                {
+                  q: 'Is this just ChatGPT with a fitness skin?',
+                  a: 'No. VividCoach is built specifically around fitness coaching — it maintains persistent memory of your injuries, history, and goals across every session. It\'s not a general chatbot; it\'s a coaching system designed to remember and use everything you tell it.',
+                },
+                {
+                  q: 'Am I talking to a real person?',
+                  a: 'You\'re talking to an AI coach. We\'re transparent about that. What makes it different isn\'t whether it\'s human — it\'s that it actually knows your specific situation and adapts around it. Most real personal trainers don\'t have the time to do that at this level of detail.',
+                },
+                {
+                  q: 'What if I have an injury or limitation?',
+                  a: 'That\'s exactly what VividCoach is built for. Tell your coach on day one — bad knee, bad shoulder, post-surgery, postpartum, chronic pain. Every session is designed around it, not in spite of it.',
+                },
+                {
+                  q: 'Is my health data safe?',
+                  a: 'Yes. We don\'t sell your data. Health information you share with your coach is used only to personalize your coaching. Full details in our Privacy Policy.',
+                },
+                {
+                  q: 'Can I really cancel anytime?',
+                  a: 'Yes — directly from your iPhone Settings, no email required, no cancellation hoops. Apple handles the subscription and you\'re never locked in.',
+                },
+                {
+                  q: 'What if I don\'t have a gym?',
+                  a: 'No gym needed. Tell your coach your setup — home, park, hotel room, fully equipped gym — and your plan is built around what you actually have access to.',
+                },
+              ].map((item, i) => (
+                <div className="faq-item" key={i} data-reveal data-delay={String((i % 3) + 1)}>
+                  <dt className="faq-q">{item.q}</dt>
+                  <dd className="faq-a">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
@@ -462,7 +501,7 @@ export default async function Home() {
             <p className="quote-text">
               Most apps give you a plan. VividCoach gives you a coach who actually knows your story.
             </p>
-            <p className="quote-attribution">— What our {LAUNCH_STATE === 'live' ? 'users' : 'beta testers'} keep telling us</p>
+            <p className="quote-attribution">— The reason we built VividCoach</p>
           </div>
         </section>
 
@@ -485,6 +524,7 @@ export default async function Home() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </TrackedLink>
+              <AndroidNotifyForm />
             </>
           ) : (
             <>
@@ -526,6 +566,8 @@ export default async function Home() {
           </div>
         </section>
       </main>
+
+      <StickyMobileCTA />
 
       {/* ── FOOTER ────────────────────────────────────── */}
       <footer className="footer">
